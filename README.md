@@ -7,13 +7,11 @@ The kit has functionality for *downloading*, *storing* and *using* a **Device Ce
 The same is done for **Access Certificates** with the additional functionality to *delete* them.
 
 Furthermore, the kit enables *easy* bluetooth broadcasting and connection with *access certificates*.  
-Lastly, it has 2 easy to use methods for vehicle doors – *lock* and *unlock*.
+Lastly, it has 2 easy to use methods for vehicle doors â€“ *lock* and *unlock*.
 
 ## How do I get set up? ##
 
 * Clone it with some application or download the repository (not recommended)
-* Navigate to where you want the folder to be *in* (recommended)
-    * execute `git clone git@bitbucket.org:highmobility/amv-framework-ios.git`
 
 There are 2 ways to build the **AMVKit** framework
 
@@ -81,7 +79,7 @@ func deleteAccessCertificate(_ accessCertificate: AccessCertificate, done: @esca
 ```
 
 Disconnect from a connected vehicle.  
-In addition, this *stops* the bluetooth broadcasting (if active) – can be used before a connection to a vehicle is established.
+In addition, this *stops* the bluetooth broadcasting (if active) â€“ can be used before a connection to a vehicle is established.
 ```swift
 func disconnect()
 ```
