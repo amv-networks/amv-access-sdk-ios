@@ -1,3 +1,5 @@
+[![License](https://img.shields.io/github/license/amv-networks/amv-access-sdk-ios-reference-app.svg?maxAge=2592000)](https://github.com/amv-networks/amv-access-sdk-ios-reference-app/blob/master/LICENSE)
+
 # AMVKit #
 
 ## What is this repository for? ##
@@ -89,16 +91,16 @@ Reset the *local database* by removing all saved *access certificates*, the *dev
 func resetDatabase()
 ```
 
-### Doors Methods ###
+### Commands ###
 
 Lock the doors - successful (or not) response is returned in the *connect*-method's *handler*-block.
 ```swift
-func lockDoors() throws
+func sendCommand(.lockDoors) throws
 ```
 
 Unlock the doors - successful (or not) response is returned in the *connect*-method's *handler*-block.
 ```swift
-func unlockDoors() throws
+func sendCommand(.unlockDoors) throws
 ```
 
 ### Misc ###
@@ -115,9 +117,11 @@ enum Result<T> {
 
 Implemented *tests* for the *AMVKit*:
 
-* Access Certificates *downloading*, parsing and *deleting*
+* Access Certificates *downloading* and parsing
 * Device Certificates *downloading* and parsing
 * Key pair *generation*  
 
 To run them, open the *Xcode* project, choose *AMVKit* as the **target Scheme** and *Test*.
 
+# license
+The project is licensed under the Apache License. See [LICENSE](LICENSE) for details.
