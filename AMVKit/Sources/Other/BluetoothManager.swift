@@ -86,6 +86,7 @@ extension BluetoothManager: LocalDeviceDelegate {
 
     func localDevice(didReceiveLink link: Link) {
         link.delegate = self
+        dispatchConnectionSuccess(ConnectionStatus.connected)
     }
 
     func localDevice(didLoseLink link: Link) {
