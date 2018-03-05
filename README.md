@@ -24,12 +24,6 @@ There are 2 ways to build the **AMVKit** framework
     * Build against *AMVKit* for a *device-only* framework
 	* Build against *AMVKit Universal* for a *universal* framework
 
-## Distributing AMVKit ##
-
-It's highly recommended to distribute the *universal* framework, so that other developers can build, run and test against simulator too.  
-Distribute the created framework to be embedded in target apps.  
-In addition, the [High Mobility frameworks](https://developers.high-mobility.com/resources/sdks/#ios) need to be supplied as well.
-
 ## Using the frameworks in an app ##
 
 ### Embedding ###
@@ -92,6 +86,8 @@ func resetDatabase()
 ```
 
 ### Commands ###
+
+Before sending commands to the vehicle, you have to wait unitl any previous query is finished.
 
 Lock the doors - successful (or not) response is returned in the *connect*-method's *handler*-block.
 ```swift
