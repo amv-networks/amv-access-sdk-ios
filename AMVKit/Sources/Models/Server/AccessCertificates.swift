@@ -73,7 +73,7 @@ public struct AccessCertificate {
         return deviceCertificate.gainingSerial.hex
     }
 
-    let identifier: String
+    public let identifier: String
 
     let deviceValue: Base64
     let deviceCertificate: HMKit.AccessCertificate
