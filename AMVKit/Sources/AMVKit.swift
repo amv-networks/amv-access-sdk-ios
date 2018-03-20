@@ -28,6 +28,11 @@ public struct AMVKit {
 
         AMVKit.shared.accessSdkOptions = newAccessSdkOptions
         
+        if let identity = newAccessSdkOptions.identity {
+           self.resetDatabase()
+           KeysManager.shared.setKeysFromIdentity(identity: identity)
+        }
+        
         // The outer do-catch block is used to understand when to reset the DB
         do {
             if let deviceCertificate = DeviceCertificate.load() {
@@ -37,7 +42,7 @@ public struct AMVKit {
             }
             else {
                 try DeviceCertificate.download(publicKey: KeysManager.shared.publicKey,
-                                               accessApiContext: newAccessSdkOptions.accessApiContext) {
+                                               accessSdkOptions: newAccessSdkOptions) {
                     if case .success(let deviceCertificate) = $0 {
                         do {
                             try deviceCertificate.initialiseLocalDevice()

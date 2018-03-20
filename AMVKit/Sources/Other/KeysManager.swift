@@ -1,21 +1,27 @@
 import Foundation
 import HMCrypto
 
-
 public struct KeysManager {
 
     static var shared = KeysManager()
 
-    let privateKeyInternal: Data
+    private var privateKeyInternal: Data
     public var privateKey: Data {
         return privateKeyInternal
     }
     
-    private let publicKeyInternal: Data
+    private var publicKeyInternal: Data
     public var publicKey: Data {
         return publicKeyInternal
     }
-
+    
+    func setKeysFromIdentity(identity: Identity) {
+        KeychainLayer.shared.privateKey = Data(identity.privateKey.hexadecimal()!)
+        KeychainLayer.shared.publicKey = Data(identity.publicKey.hexadecimal()!)
+        
+        KeysManager.shared.privateKeyInternal = KeychainLayer.shared.privateKey!
+        KeysManager.shared.publicKeyInternal = KeychainLayer.shared.publicKey!
+    }
 
     // MARK: Methods
 
