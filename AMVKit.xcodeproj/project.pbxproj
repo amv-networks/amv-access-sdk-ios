@@ -45,6 +45,9 @@
 		20DA5D761F8CFD1F0065204E /* Doors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20DA5D751F8CFD1F0065204E /* Doors.swift */; };
 		20F78DA91F8BBF5B006191F4 /* AccessCertificates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F78DA81F8BBF5B006191F4 /* AccessCertificates.swift */; };
 		20F78DAB1F8BD6BC006191F4 /* URLSession+ModelParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F78DAA1F8BD6BC006191F4 /* URLSession+ModelParser.swift */; };
+		318B2F8F2060F93100C94379 /* Identity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318B2F8E2060F93100C94379 /* Identity.swift */; };
+		318B2F912060F94800C94379 /* IdentityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318B2F902060F94800C94379 /* IdentityManager.swift */; };
+		318B2F9620610A5400C94379 /* AccessSdkOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318B2F9520610A5400C94379 /* AccessSdkOptions.swift */; };
 		31F5EB6720108CD7001F3BEC /* CommandFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F5EB6620108CD7001F3BEC /* CommandFactory.swift */; };
 		31F5EB6920108DF1001F3BEC /* Command.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F5EB6820108DF1001F3BEC /* Command.swift */; };
 		31F5EB6B201090E2001F3BEC /* CommandType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F5EB6A201090E2001F3BEC /* CommandType.swift */; };
@@ -82,6 +85,9 @@
 		20DA5D751F8CFD1F0065204E /* Doors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Doors.swift; sourceTree = "<group>"; };
 		20F78DA81F8BBF5B006191F4 /* AccessCertificates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessCertificates.swift; sourceTree = "<group>"; };
 		20F78DAA1F8BD6BC006191F4 /* URLSession+ModelParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+ModelParser.swift"; sourceTree = "<group>"; };
+		318B2F8E2060F93100C94379 /* Identity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Identity.swift; sourceTree = "<group>"; };
+		318B2F902060F94800C94379 /* IdentityManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentityManager.swift; sourceTree = "<group>"; };
+		318B2F9520610A5400C94379 /* AccessSdkOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessSdkOptions.swift; sourceTree = "<group>"; };
 		31F5EB6620108CD7001F3BEC /* CommandFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandFactory.swift; sourceTree = "<group>"; };
 		31F5EB6820108DF1001F3BEC /* Command.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Command.swift; sourceTree = "<group>"; };
 		31F5EB6A201090E2001F3BEC /* CommandType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandType.swift; sourceTree = "<group>"; };
@@ -137,6 +143,7 @@
 				204449D81F7E487600F5C55E /* Models */,
 				204449D51F7E485E00F5C55E /* Other */,
 				204449CA1F7E46D700F5C55E /* AMVKit.swift */,
+				318B2F9520610A5400C94379 /* AccessSdkOptions.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -166,6 +173,7 @@
 		204449D81F7E487600F5C55E /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				318B2F85205FE1F300C94379 /* Identity */,
 				31F5EB6C201098E5001F3BEC /* Commands */,
 				209E94E01F90B61700A25452 /* Protocols */,
 				209E94E11F90B63B00A25452 /* Server */,
@@ -226,6 +234,15 @@
 				204449BB1F7E41FC00F5C55E /* HMKit.framework */,
 			);
 			path = Frameworks;
+			sourceTree = "<group>";
+		};
+		318B2F85205FE1F300C94379 /* Identity */ = {
+			isa = PBXGroup;
+			children = (
+				318B2F8E2060F93100C94379 /* Identity.swift */,
+				318B2F902060F94800C94379 /* IdentityManager.swift */,
+			);
+			path = Identity;
 			sourceTree = "<group>";
 		};
 		31F5EB6C201098E5001F3BEC /* Commands */ = {
@@ -347,14 +364,17 @@
 				204449E31F7E502A00F5C55E /* Collection+UInt8.swift in Sources */,
 				204449D31F7E485A00F5C55E /* KeysManager.swift in Sources */,
 				31F5EB7420176F95001F3BEC /* AccessApiContext.swift in Sources */,
+				318B2F912060F94800C94379 /* IdentityManager.swift in Sources */,
 				204449E11F7E4C5500F5C55E /* Storable.swift in Sources */,
 				204449CB1F7E46D700F5C55E /* AMVKit.swift in Sources */,
 				31F5EB6E20109987001F3BEC /* HmCommandFactory.swift in Sources */,
 				209E94E51F90B9D000A25452 /* Diagnostics.swift in Sources */,
 				204449D01F7E485300F5C55E /* KeychainLayer.swift in Sources */,
+				318B2F8F2060F93100C94379 /* Identity.swift in Sources */,
 				2047E7E31F8BA4E800B5261F /* DeviceCertificate.swift in Sources */,
 				20DA5D761F8CFD1F0065204E /* Doors.swift in Sources */,
 				31F5EB6920108DF1001F3BEC /* Command.swift in Sources */,
+				318B2F9620610A5400C94379 /* AccessSdkOptions.swift in Sources */,
 				204449E81F7E530400F5C55E /* Miscellaneous.swift in Sources */,
 				2047E7E51F8BA97100B5261F /* URL+AMV.swift in Sources */,
 				20BEB3981FBC9087000F4B8E /* ConnectionStatus.swift in Sources */,
