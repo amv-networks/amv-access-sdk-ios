@@ -28,8 +28,10 @@ public struct AMVKit {
 
         AMVKit.shared.accessSdkOptions = newAccessSdkOptions
         
+        // TODO Reset database only if identity has changed
+        self.resetDatabase()
+        
         if let identity = newAccessSdkOptions.identity {
-           self.resetDatabase()
            KeysManager.shared.setKeysFromIdentity(identity: identity)
         }
         
