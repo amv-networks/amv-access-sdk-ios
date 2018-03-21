@@ -9,8 +9,18 @@ public struct KeysManager {
     private(set) var publicKey: Data
 
     func setKeysFromIdentity(identity: Identity) {
-        KeychainLayer.shared.privateKey = Data(identity.privateKey.hexadecimal()!)
-        KeychainLayer.shared.publicKey = Data(identity.publicKey.hexadecimal()!)
+        if let privateKey = identity.privateKey.hexadecimal(), let publicKey = identity.publicKey.hexadecimal() {
+            storeKeys(privateKey: privateKey, publicKey: publicKey)
+            
+            KeysManager.shared.privateKey = privateKey
+            KeysManager.shared.publicKey = publicKey
+        }
+    }
+    
+    func storeKeys(privateKey: Data, publicKey: Data) {
+        // Save the keys to a SECURE place
+        KeychainLayer.shared.privateKey = privateKey
+        KeychainLayer.shared.publicKey = publicKey
     }
 
     // MARK: Methods
@@ -21,13 +31,10 @@ public struct KeysManager {
             self.publicKey = publicKey
         } else {
             let keyPair = HMCryptor.generateKeyPair()
-
-            // Save the keys to a SECURE place
-            KeychainLayer.shared.privateKey = keyPair.privateKey
-            KeychainLayer.shared.publicKey = keyPair.publicKey
-            
             self.privateKey = keyPair.privateKey
-            self.publicKey = keyPair.privateKey
+            self.publicKey = keyPair.publicKey
+            
+            self.storeKeys(privateKey: self.privateKey, publicKey: self.publicKey)
         }
     }
 }
