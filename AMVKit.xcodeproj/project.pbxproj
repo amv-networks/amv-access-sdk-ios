@@ -24,8 +24,6 @@
 		2002AC661FA35C950011E5EE /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2002AC651FA35C950011E5EE /* Keys.swift */; };
 		201970541F8E04E900B7D64F /* Link+SendCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201970531F8E04E900B7D64F /* Link+SendCommand.swift */; };
 		203BC2551F7E4046002CCE9C /* AMVKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 203BC2531F7E4046002CCE9C /* AMVKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		204449BC1F7E41FC00F5C55E /* HMCrypto.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 204449B91F7E41FB00F5C55E /* HMCrypto.framework */; };
-		204449BE1F7E41FC00F5C55E /* HMKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 204449BB1F7E41FC00F5C55E /* HMKit.framework */; };
 		204449CB1F7E46D700F5C55E /* AMVKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204449CA1F7E46D700F5C55E /* AMVKit.swift */; };
 		204449D01F7E485300F5C55E /* KeychainLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204449CF1F7E485300F5C55E /* KeychainLayer.swift */; };
 		204449D31F7E485A00F5C55E /* KeysManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204449D11F7E485A00F5C55E /* KeysManager.swift */; };
@@ -41,10 +39,12 @@
 		209E94E51F90B9D000A25452 /* Diagnostics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209E94E41F90B9D000A25452 /* Diagnostics.swift */; };
 		20AFD1071F98C93600073A85 /* BluetoothManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20AFD1061F98C93600073A85 /* BluetoothManager.swift */; };
 		20BEB3981FBC9087000F4B8E /* ConnectionStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20BEB3971FBC9087000F4B8E /* ConnectionStatus.swift */; };
-		20D3A3FF1F97742400305F06 /* AutoAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20D3A3FE1F97742400305F06 /* AutoAPI.framework */; };
 		20DA5D761F8CFD1F0065204E /* Doors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20DA5D751F8CFD1F0065204E /* Doors.swift */; };
 		20F78DA91F8BBF5B006191F4 /* AccessCertificates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F78DA81F8BBF5B006191F4 /* AccessCertificates.swift */; };
 		20F78DAB1F8BD6BC006191F4 /* URLSession+ModelParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F78DAA1F8BD6BC006191F4 /* URLSession+ModelParser.swift */; };
+		313AC97A207380EF00062E74 /* HMCrypto.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 204449B91F7E41FB00F5C55E /* HMCrypto.framework */; };
+		313AC97B207380EF00062E74 /* AutoAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20D3A3FE1F97742400305F06 /* AutoAPI.framework */; };
+		313AC97C207380EF00062E74 /* HMKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 204449BB1F7E41FC00F5C55E /* HMKit.framework */; };
 		318B2F8F2060F93100C94379 /* Identity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318B2F8E2060F93100C94379 /* Identity.swift */; };
 		318B2F912060F94800C94379 /* IdentityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318B2F902060F94800C94379 /* IdentityManager.swift */; };
 		318B2F9620610A5400C94379 /* AccessSdkOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318B2F9520610A5400C94379 /* AccessSdkOptions.swift */; };
@@ -103,9 +103,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				20D3A3FF1F97742400305F06 /* AutoAPI.framework in Frameworks */,
-				204449BC1F7E41FC00F5C55E /* HMCrypto.framework in Frameworks */,
-				204449BE1F7E41FC00F5C55E /* HMKit.framework in Frameworks */,
+				313AC97A207380EF00062E74 /* HMCrypto.framework in Frameworks */,
+				313AC97B207380EF00062E74 /* AutoAPI.framework in Frameworks */,
+				313AC97C207380EF00062E74 /* HMKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -299,7 +299,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0900;
-				LastUpgradeCheck = 0900;
+				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = "High-Mobility GmbH";
 				TargetAttributes = {
 					203BC24F1F7E4046002CCE9C = {
@@ -412,6 +412,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -419,6 +420,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -474,6 +476,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -481,6 +484,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
