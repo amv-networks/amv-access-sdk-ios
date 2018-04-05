@@ -67,6 +67,12 @@ public struct AccessCertificate {
 
         return deviceCertificate.validity.isValid
     }
+    
+    public var isValidNow: Bool {
+        get {
+            return isValid(Date())
+        }
+    }
 
     /// Gaining serial (of the vehicle)
     public var vehicleSerial: Hex {
