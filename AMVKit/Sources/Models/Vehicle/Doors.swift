@@ -4,11 +4,17 @@ import Foundation
 
 public struct Doors: VehicleUpdateInitable {
 
-    /// If All the doors are locked
+    /// If all the doors are locked
     public let isLocked: Bool
+    
+    /// If all the doors are unlocked
+    public let isUnlocked: Bool
 
-    /// If Any of the doors is open
+    /// If any of the doors is open
     public let isOpen: Bool
+    
+    /// If all doors are closed
+    public let isClosed: Bool
 
 
     // MARK: VehicleUpdateInitable
@@ -28,6 +34,9 @@ public struct Doors: VehicleUpdateInitable {
 
     init(values: [AutoAPI.DoorLocksCommand.Door]) {
         isLocked = !values.contains { $0.lockStatus == .unlocked }
+        isUnlocked = !isLocked
+        
         isOpen = values.contains { $0.positionStatus == .open }
+        isClosed = !isOpen
     }
 }
