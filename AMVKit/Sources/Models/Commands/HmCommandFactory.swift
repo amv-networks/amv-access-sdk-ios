@@ -9,6 +9,9 @@ struct HmCommandFactory : CommandFactory {
             
         case .unlockDoors:
             return SimpleCommand(bytes : AutoAPI.DoorLocksCommand.lockDoorsBytes(.unlock))
+            
+        case .requestVehicleState:
+            return SimpleCommand(bytes: AutoAPI.VehicleStatusCommand.getStateBytes)
         }
     }
 }

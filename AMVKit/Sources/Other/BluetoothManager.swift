@@ -29,18 +29,6 @@ extension BluetoothManager: LinkDelegate {
         case .connected:        dispatchConnectionSuccess(ConnectionStatus.connected)
         case .disconnected:     dispatchConnectionSuccess(ConnectionStatus.disconnected)
         }
-
-        if (link.state == .authenticated) && (previousState != .authenticated) {
-            // Giving it a tiny breathing room
-            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.01) {
-                do {
-                    try link.sendCommand(AutoAPI.VehicleStatusCommand.getStateBytes)
-                }
-                catch {
-                    self.dispatchConnectionError(error)
-                }
-            }
-        }
     }
 
     func link(_ link: Link, commandReceived bytes: [UInt8]) {
