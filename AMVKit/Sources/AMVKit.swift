@@ -109,6 +109,11 @@ public struct AMVKit {
         return accessCertificates.all
     }
     
+    public func getAccessCertificateById(_ identifier: String) -> AccessCertificate? {
+        let accessCertificatesFiltered = getAccessCertificates()?.filter({$0.identifier == identifier})
+        return accessCertificatesFiltered?.first
+    }
+    
     /// Download Access Certificates from the server.
     ///
     /// Tries to download certificates from the server,
