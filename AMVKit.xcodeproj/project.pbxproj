@@ -45,7 +45,6 @@
 		20DA5D761F8CFD1F0065204E /* Doors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20DA5D751F8CFD1F0065204E /* Doors.swift */; };
 		20F78DA91F8BBF5B006191F4 /* AccessCertificates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F78DA81F8BBF5B006191F4 /* AccessCertificates.swift */; };
 		20F78DAB1F8BD6BC006191F4 /* URLSession+ModelParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F78DAA1F8BD6BC006191F4 /* URLSession+ModelParser.swift */; };
-		313244AF20760E8C0016D74F /* Data+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 313244AE20760E8C0016D74F /* Data+Hex.swift */; };
 		313244B1207631F90016D74F /* AutoAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20D3A3FE1F97742400305F06 /* AutoAPI.framework */; };
 		313244B2207631F90016D74F /* HMCrypto.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 204449B91F7E41FB00F5C55E /* HMCrypto.framework */; };
 		313244B3207631F90016D74F /* HMKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 204449BB1F7E41FC00F5C55E /* HMKit.framework */; };
@@ -101,7 +100,6 @@
 		20DA5D751F8CFD1F0065204E /* Doors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Doors.swift; sourceTree = "<group>"; };
 		20F78DA81F8BBF5B006191F4 /* AccessCertificates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessCertificates.swift; sourceTree = "<group>"; };
 		20F78DAA1F8BD6BC006191F4 /* URLSession+ModelParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+ModelParser.swift"; sourceTree = "<group>"; };
-		313244AE20760E8C0016D74F /* Data+Hex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Data+Hex.swift"; path = "../../../../amv-booking-demo-app-ios/AMV Reference App/Sources/Extensions/Data+Hex.swift"; sourceTree = "<group>"; };
 		314FEB692075EBAD001972E4 /* AMVKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AMVKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		314FEB6B2075EBAD001972E4 /* AMVKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AMVKitTests.swift; sourceTree = "<group>"; };
 		314FEB6D2075EBAD001972E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -213,7 +211,6 @@
 		204449E61F7E50A100F5C55E /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				313244AE20760E8C0016D74F /* Data+Hex.swift */,
 				204449E21F7E502A00F5C55E /* Collection+UInt8.swift */,
 				201970531F8E04E900B7D64F /* Link+SendCommand.swift */,
 				2047E7E41F8BA97100B5261F /* URL+AMV.swift */,
@@ -424,7 +421,6 @@
 				31F5EB7020109B06001F3BEC /* SimpleCommand.swift in Sources */,
 				209E94E31F90B6DB00A25452 /* Charging.swift in Sources */,
 				204449E31F7E502A00F5C55E /* Collection+UInt8.swift in Sources */,
-				313244AF20760E8C0016D74F /* Data+Hex.swift in Sources */,
 				204449D31F7E485A00F5C55E /* KeysManager.swift in Sources */,
 				31F5EB7420176F95001F3BEC /* AccessApiContext.swift in Sources */,
 				204449E11F7E4C5500F5C55E /* Storable.swift in Sources */,
