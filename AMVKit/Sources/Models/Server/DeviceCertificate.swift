@@ -37,9 +37,10 @@ public struct DeviceCertificate {
         var request: URLRequest
         
         if accessSdkOptions.identity != nil {
+            // Try to retrieve device certificate for given identity
             request = try URLRequest(url: url, amvNonceHeaders: true)
         } else {
-            
+            // Create new device certificate
             request = URLRequest(url: url)
             
             request.httpBody = try JSONEncoder().encode(["device_public_key" : publicKey.base64String])
