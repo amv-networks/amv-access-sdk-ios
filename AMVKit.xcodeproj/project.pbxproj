@@ -24,8 +24,6 @@
 		2002AC661FA35C950011E5EE /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2002AC651FA35C950011E5EE /* Keys.swift */; };
 		201970541F8E04E900B7D64F /* Link+SendCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201970531F8E04E900B7D64F /* Link+SendCommand.swift */; };
 		203BC2551F7E4046002CCE9C /* AMVKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 203BC2531F7E4046002CCE9C /* AMVKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		204449BC1F7E41FC00F5C55E /* HMCrypto.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 204449B91F7E41FB00F5C55E /* HMCrypto.framework */; };
-		204449BE1F7E41FC00F5C55E /* HMKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 204449BB1F7E41FC00F5C55E /* HMKit.framework */; };
 		204449CB1F7E46D700F5C55E /* AMVKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204449CA1F7E46D700F5C55E /* AMVKit.swift */; };
 		204449D01F7E485300F5C55E /* KeychainLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204449CF1F7E485300F5C55E /* KeychainLayer.swift */; };
 		204449D31F7E485A00F5C55E /* KeysManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204449D11F7E485A00F5C55E /* KeysManager.swift */; };
@@ -41,18 +39,16 @@
 		209E94E51F90B9D000A25452 /* Diagnostics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209E94E41F90B9D000A25452 /* Diagnostics.swift */; };
 		20AFD1071F98C93600073A85 /* BluetoothManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20AFD1061F98C93600073A85 /* BluetoothManager.swift */; };
 		20BEB3981FBC9087000F4B8E /* ConnectionStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20BEB3971FBC9087000F4B8E /* ConnectionStatus.swift */; };
-		20D3A3FF1F97742400305F06 /* AutoAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20D3A3FE1F97742400305F06 /* AutoAPI.framework */; };
 		20DA5D761F8CFD1F0065204E /* Doors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20DA5D751F8CFD1F0065204E /* Doors.swift */; };
 		20F78DA91F8BBF5B006191F4 /* AccessCertificates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F78DA81F8BBF5B006191F4 /* AccessCertificates.swift */; };
 		20F78DAB1F8BD6BC006191F4 /* URLSession+ModelParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F78DAA1F8BD6BC006191F4 /* URLSession+ModelParser.swift */; };
-		313244B1207631F90016D74F /* AutoAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20D3A3FE1F97742400305F06 /* AutoAPI.framework */; };
-		313244B2207631F90016D74F /* HMCrypto.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 204449B91F7E41FB00F5C55E /* HMCrypto.framework */; };
-		313244B3207631F90016D74F /* HMKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 204449BB1F7E41FC00F5C55E /* HMKit.framework */; };
-		314FEB6C2075EBAD001972E4 /* AMVKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 314FEB6B2075EBAD001972E4 /* AMVKitTests.swift */; };
-		314FEB6E2075EBAD001972E4 /* AMVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 203BC2501F7E4046002CCE9C /* AMVKit.framework */; };
-		314FEB772075ECE2001972E4 /* AutoAPI.framework in Resources */ = {isa = PBXBuildFile; fileRef = 20D3A3FE1F97742400305F06 /* AutoAPI.framework */; };
-		314FEB782075ECE2001972E4 /* HMCrypto.framework in Resources */ = {isa = PBXBuildFile; fileRef = 204449B91F7E41FB00F5C55E /* HMCrypto.framework */; };
-		314FEB792075ECE2001972E4 /* HMKit.framework in Resources */ = {isa = PBXBuildFile; fileRef = 204449BB1F7E41FC00F5C55E /* HMKit.framework */; };
+		313AC97A207380EF00062E74 /* HMCrypto.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 204449B91F7E41FB00F5C55E /* HMCrypto.framework */; };
+		313AC97B207380EF00062E74 /* AutoAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20D3A3FE1F97742400305F06 /* AutoAPI.framework */; };
+		313AC97C207380EF00062E74 /* HMKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 204449BB1F7E41FC00F5C55E /* HMKit.framework */; };
+		318B2F8F2060F93100C94379 /* Identity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318B2F8E2060F93100C94379 /* Identity.swift */; };
+		318B2F912060F94800C94379 /* IdentityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318B2F902060F94800C94379 /* IdentityManager.swift */; };
+		318B2F9620610A5400C94379 /* AccessSdkOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318B2F9520610A5400C94379 /* AccessSdkOptions.swift */; };
+		318B2F9E2061487F00C94379 /* String+Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318B2F9D2061487F00C94379 /* String+Data.swift */; };
 		31F5EB6720108CD7001F3BEC /* CommandFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F5EB6620108CD7001F3BEC /* CommandFactory.swift */; };
 		31F5EB6920108DF1001F3BEC /* Command.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F5EB6820108DF1001F3BEC /* Command.swift */; };
 		31F5EB6B201090E2001F3BEC /* CommandType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F5EB6A201090E2001F3BEC /* CommandType.swift */; };
@@ -60,16 +56,6 @@
 		31F5EB7020109B06001F3BEC /* SimpleCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F5EB6F20109B06001F3BEC /* SimpleCommand.swift */; };
 		31F5EB7420176F95001F3BEC /* AccessApiContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F5EB7320176F95001F3BEC /* AccessApiContext.swift */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		314FEB6F2075EBAD001972E4 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 203BC2471F7E4046002CCE9C /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 203BC24F1F7E4046002CCE9C;
-			remoteInfo = AMVKit;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		2002AC651FA35C950011E5EE /* Keys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keys.swift; sourceTree = "<group>"; };
@@ -100,9 +86,10 @@
 		20DA5D751F8CFD1F0065204E /* Doors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Doors.swift; sourceTree = "<group>"; };
 		20F78DA81F8BBF5B006191F4 /* AccessCertificates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessCertificates.swift; sourceTree = "<group>"; };
 		20F78DAA1F8BD6BC006191F4 /* URLSession+ModelParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+ModelParser.swift"; sourceTree = "<group>"; };
-		314FEB692075EBAD001972E4 /* AMVKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AMVKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		314FEB6B2075EBAD001972E4 /* AMVKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AMVKitTests.swift; sourceTree = "<group>"; };
-		314FEB6D2075EBAD001972E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		318B2F8E2060F93100C94379 /* Identity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Identity.swift; sourceTree = "<group>"; };
+		318B2F902060F94800C94379 /* IdentityManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentityManager.swift; sourceTree = "<group>"; };
+		318B2F9520610A5400C94379 /* AccessSdkOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessSdkOptions.swift; sourceTree = "<group>"; };
+		318B2F9D2061487F00C94379 /* String+Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Data.swift"; sourceTree = "<group>"; };
 		31F5EB6620108CD7001F3BEC /* CommandFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandFactory.swift; sourceTree = "<group>"; };
 		31F5EB6820108DF1001F3BEC /* Command.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Command.swift; sourceTree = "<group>"; };
 		31F5EB6A201090E2001F3BEC /* CommandType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandType.swift; sourceTree = "<group>"; };
@@ -116,20 +103,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				20D3A3FF1F97742400305F06 /* AutoAPI.framework in Frameworks */,
-				204449BC1F7E41FC00F5C55E /* HMCrypto.framework in Frameworks */,
-				204449BE1F7E41FC00F5C55E /* HMKit.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		314FEB662075EBAD001972E4 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				314FEB6E2075EBAD001972E4 /* AMVKit.framework in Frameworks */,
-				313244B1207631F90016D74F /* AutoAPI.framework in Frameworks */,
-				313244B2207631F90016D74F /* HMCrypto.framework in Frameworks */,
-				313244B3207631F90016D74F /* HMKit.framework in Frameworks */,
+				313AC97A207380EF00062E74 /* HMCrypto.framework in Frameworks */,
+				313AC97B207380EF00062E74 /* AutoAPI.framework in Frameworks */,
+				313AC97C207380EF00062E74 /* HMKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -140,7 +116,6 @@
 			isa = PBXGroup;
 			children = (
 				203BC2521F7E4046002CCE9C /* AMVKit */,
-				314FEB6A2075EBAD001972E4 /* AMVKitTests */,
 				209F0C3E1F7E40C4008BB3F6 /* Frameworks */,
 				203BC2511F7E4046002CCE9C /* Products */,
 			);
@@ -150,7 +125,6 @@
 			isa = PBXGroup;
 			children = (
 				203BC2501F7E4046002CCE9C /* AMVKit.framework */,
-				314FEB692075EBAD001972E4 /* AMVKitTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -171,6 +145,7 @@
 				204449D81F7E487600F5C55E /* Models */,
 				204449D51F7E485E00F5C55E /* Other */,
 				204449CA1F7E46D700F5C55E /* AMVKit.swift */,
+				318B2F9520610A5400C94379 /* AccessSdkOptions.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -200,6 +175,7 @@
 		204449D81F7E487600F5C55E /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				318B2F85205FE1F300C94379 /* Identity */,
 				31F5EB6C201098E5001F3BEC /* Commands */,
 				209E94E01F90B61700A25452 /* Protocols */,
 				209E94E11F90B63B00A25452 /* Server */,
@@ -216,6 +192,7 @@
 				2047E7E41F8BA97100B5261F /* URL+AMV.swift */,
 				2088B5AC1F8B98C20066413C /* URLRequest+AMVNonce.swift */,
 				20F78DAA1F8BD6BC006191F4 /* URLSession+ModelParser.swift */,
+				318B2F9D2061487F00C94379 /* String+Data.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -262,13 +239,13 @@
 			path = Frameworks;
 			sourceTree = "<group>";
 		};
-		314FEB6A2075EBAD001972E4 /* AMVKitTests */ = {
+		318B2F85205FE1F300C94379 /* Identity */ = {
 			isa = PBXGroup;
 			children = (
-				314FEB6B2075EBAD001972E4 /* AMVKitTests.swift */,
-				314FEB6D2075EBAD001972E4 /* Info.plist */,
+				318B2F8E2060F93100C94379 /* Identity.swift */,
+				318B2F902060F94800C94379 /* IdentityManager.swift */,
 			);
-			path = AMVKitTests;
+			path = Identity;
 			sourceTree = "<group>";
 		};
 		31F5EB6C201098E5001F3BEC /* Commands */ = {
@@ -315,32 +292,14 @@
 			productReference = 203BC2501F7E4046002CCE9C /* AMVKit.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		314FEB682075EBAD001972E4 /* AMVKitTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 314FEB712075EBAD001972E4 /* Build configuration list for PBXNativeTarget "AMVKitTests" */;
-			buildPhases = (
-				314FEB652075EBAD001972E4 /* Sources */,
-				314FEB662075EBAD001972E4 /* Frameworks */,
-				314FEB672075EBAD001972E4 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				314FEB702075EBAD001972E4 /* PBXTargetDependency */,
-			);
-			name = AMVKitTests;
-			productName = AMVKitTests;
-			productReference = 314FEB692075EBAD001972E4 /* AMVKitTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		203BC2471F7E4046002CCE9C /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0930;
-				LastUpgradeCheck = 0900;
+				LastSwiftUpdateCheck = 0900;
+				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = "High-Mobility GmbH";
 				TargetAttributes = {
 					203BC24F1F7E4046002CCE9C = {
@@ -350,10 +309,6 @@
 					};
 					20D3A4011F9777BB00305F06 = {
 						CreatedOnToolsVersion = 9.0;
-						ProvisioningStyle = Automatic;
-					};
-					314FEB682075EBAD001972E4 = {
-						CreatedOnToolsVersion = 9.3;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -372,7 +327,6 @@
 			targets = (
 				203BC24F1F7E4046002CCE9C /* AMVKit */,
 				20D3A4011F9777BB00305F06 /* AMVKit Universal */,
-				314FEB682075EBAD001972E4 /* AMVKitTests */,
 			);
 		};
 /* End PBXProject section */
@@ -382,16 +336,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		314FEB672075EBAD001972E4 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				314FEB772075ECE2001972E4 /* AutoAPI.framework in Resources */,
-				314FEB782075ECE2001972E4 /* HMCrypto.framework in Resources */,
-				314FEB792075ECE2001972E4 /* HMKit.framework in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -423,19 +367,23 @@
 				204449E31F7E502A00F5C55E /* Collection+UInt8.swift in Sources */,
 				204449D31F7E485A00F5C55E /* KeysManager.swift in Sources */,
 				31F5EB7420176F95001F3BEC /* AccessApiContext.swift in Sources */,
+				318B2F912060F94800C94379 /* IdentityManager.swift in Sources */,
 				204449E11F7E4C5500F5C55E /* Storable.swift in Sources */,
 				204449CB1F7E46D700F5C55E /* AMVKit.swift in Sources */,
 				31F5EB6E20109987001F3BEC /* HmCommandFactory.swift in Sources */,
 				209E94E51F90B9D000A25452 /* Diagnostics.swift in Sources */,
 				204449D01F7E485300F5C55E /* KeychainLayer.swift in Sources */,
+				318B2F8F2060F93100C94379 /* Identity.swift in Sources */,
 				2047E7E31F8BA4E800B5261F /* DeviceCertificate.swift in Sources */,
 				20DA5D761F8CFD1F0065204E /* Doors.swift in Sources */,
 				31F5EB6920108DF1001F3BEC /* Command.swift in Sources */,
+				318B2F9620610A5400C94379 /* AccessSdkOptions.swift in Sources */,
 				204449E81F7E530400F5C55E /* Miscellaneous.swift in Sources */,
 				2047E7E51F8BA97100B5261F /* URL+AMV.swift in Sources */,
 				20BEB3981FBC9087000F4B8E /* ConnectionStatus.swift in Sources */,
 				20F78DAB1F8BD6BC006191F4 /* URLSession+ModelParser.swift in Sources */,
 				20AFD1071F98C93600073A85 /* BluetoothManager.swift in Sources */,
+				318B2F9E2061487F00C94379 /* String+Data.swift in Sources */,
 				2088B5AD1F8B98C20066413C /* URLRequest+AMVNonce.swift in Sources */,
 				201970541F8E04E900B7D64F /* Link+SendCommand.swift in Sources */,
 				2002AC661FA35C950011E5EE /* Keys.swift in Sources */,
@@ -447,23 +395,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		314FEB652075EBAD001972E4 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				314FEB6C2075EBAD001972E4 /* AMVKitTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		314FEB702075EBAD001972E4 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 203BC24F1F7E4046002CCE9C /* AMVKit */;
-			targetProxy = 314FEB6F2075EBAD001972E4 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		203BC2561F7E4046002CCE9C /* Debug */ = {
@@ -480,6 +412,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -487,6 +420,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -501,7 +435,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/Frameworks/**";
+				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/Frameworks";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -542,6 +476,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -549,6 +484,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -563,7 +499,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/Frameworks/**";
+				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/Frameworks";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -647,50 +583,6 @@
 			};
 			name = Release;
 		};
-		314FEB722075EBAD001972E4 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ENABLE_OBJC_WEAK = YES;
-				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
-				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = F42CFRE556;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Frameworks",
-				);
-				INFOPLIST_FILE = AMVKitTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = amv.AMVKitTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		314FEB732075EBAD001972E4 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ENABLE_OBJC_WEAK = YES;
-				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
-				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = F42CFRE556;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Frameworks",
-				);
-				INFOPLIST_FILE = AMVKitTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = amv.AMVKitTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -717,15 +609,6 @@
 			buildConfigurations = (
 				20D3A4031F9777BB00305F06 /* Debug */,
 				20D3A4041F9777BB00305F06 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		314FEB712075EBAD001972E4 /* Build configuration list for PBXNativeTarget "AMVKitTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				314FEB722075EBAD001972E4 /* Debug */,
-				314FEB732075EBAD001972E4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

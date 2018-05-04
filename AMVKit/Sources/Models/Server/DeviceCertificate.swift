@@ -14,20 +14,40 @@ public struct DeviceCertificate {
     let issuerPublicKey: Base64
     let value: Base64
 
+    
+    static func getDeviceCertificateURL(accessSdkOptions: AccessSdkOptions) -> URL? {
+        let accessApiContext = accessSdkOptions.accessApiContext
+        
+        if let identity = accessSdkOptions.identity {
+            return URL(baseUrl: accessApiContext.baseUrl, suffix: "device/\(identity.deviceSerialNumber.lowercased())/device_certificate")
+        } else {
+            return URL(baseUrl: accessApiContext.baseUrl, suffix: "device_certificates")
+        }
+    }
 
     // MARK: Methods
 
-    static func download(publicKey: Data, accessApiContext: AccessApiContext, completion: @escaping (Result<DeviceCertificate>) -> Void) throws {
-        guard let url = URL(baseUrl: accessApiContext.baseUrl, suffix: "/device_certificates") else {
+    static func download(publicKey: Data, accessSdkOptions: AccessSdkOptions, completion: @escaping (Result<DeviceCertificate>) -> Void) throws {
+        let accessApiContext = accessSdkOptions.accessApiContext
+        
+        guard let url = getDeviceCertificateURL(accessSdkOptions: accessSdkOptions) else {
             throw Failure.invalidURL
         }
-
-        var request = URLRequest(url: url)
-
-        request.httpBody = try JSONEncoder().encode(["device_public_key" : publicKey.base64String])
-        request.httpMethod = "POST"
-        request.setValue(accessApiContext.appId + ":" + accessApiContext.apiKey, forHTTPHeaderField: "Authorization")
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        var request: URLRequest
+        
+        if accessSdkOptions.identity != nil {
+            // Try to retrieve device certificate for given identity
+            request = try URLRequest(url: url, amvNonceHeaders: true)
+        } else {
+            // Create new device certificate
+            request = URLRequest(url: url)
+            
+            request.httpBody = try JSONEncoder().encode(["device_public_key" : publicKey.base64String])
+            request.httpMethod = "POST"
+            request.setValue(accessApiContext.appId + ":" + accessApiContext.apiKey, forHTTPHeaderField: "Authorization")
+            request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        }
 
         URLSession.shared.dataTask(with: request, completion: completion) {
             if AMVKit.shared.logRequestsResponse, let json = try? JSONSerialization.jsonObject(with: $0, options: []) {

@@ -1,39 +1,40 @@
 import Foundation
 import HMCrypto
 
-
 public struct KeysManager {
 
     static var shared = KeysManager()
 
-    let privateKeyInternal: Data
-    public var privateKey: Data {
-        return privateKeyInternal
+    private(set) var privateKey: Data
+    private(set) var publicKey: Data
+
+    func setKeysFromIdentity(identity: Identity) {
+        if let privateKey = identity.privateKey.hexadecimal(), let publicKey = identity.publicKey.hexadecimal() {
+            storeKeys(privateKey: privateKey, publicKey: publicKey)
+            
+            KeysManager.shared.privateKey = privateKey
+            KeysManager.shared.publicKey = publicKey
+        }
     }
     
-    private let publicKeyInternal: Data
-    public var publicKey: Data {
-        return publicKeyInternal
+    func storeKeys(privateKey: Data, publicKey: Data) {
+        // Save the keys to a SECURE place
+        KeychainLayer.shared.privateKey = privateKey
+        KeychainLayer.shared.publicKey = publicKey
     }
 
-
     // MARK: Methods
-
     private init() {
         // If it's a FIRST LAUNCH or the keys are missing (for some mysterious reason) – create NEW keys
         if !AMVKit.shared.isFirstLaunch, let privateKey = KeychainLayer.shared.privateKey, let publicKey = KeychainLayer.shared.publicKey {
-            self.privateKeyInternal = privateKey
-            self.publicKeyInternal = publicKey
-        }
-        else {
+            self.privateKey = privateKey
+            self.publicKey = publicKey
+        } else {
             let keyPair = HMCryptor.generateKeyPair()
-
-            // Save the keys to a SECURE place
-            KeychainLayer.shared.privateKey = keyPair.privateKey
-            KeychainLayer.shared.publicKey = keyPair.publicKey
-
-            self.privateKeyInternal = keyPair.privateKey
-            self.publicKeyInternal = keyPair.publicKey
+            self.privateKey = keyPair.privateKey
+            self.publicKey = keyPair.publicKey
+            
+            self.storeKeys(privateKey: self.privateKey, publicKey: self.publicKey)
         }
     }
 }

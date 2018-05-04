@@ -9,7 +9,7 @@ public struct AMVKit {
     /// Singleton access point for AMVKit
     public static internal(set) var shared = AMVKit()
     
-    private var accessApiContext: AccessApiContext?
+    private var accessSdkOptions: AccessSdkOptions?
 
     // MARK: Methods
     
@@ -19,14 +19,21 @@ public struct AMVKit {
     /// if not present, tries to download one from the server.
     ///
     /// - Parameters:
-    ///     - accessApiContext: Contains the URL and credentials to be able to communciate with the backend.
+    ///     - accessSdkOptions: Contains URL, credentials and Identity.
     ///     - handler: returns an async error or success
     /// - Throws: if an error occured initially
     /// - Warning: Must be called before other functionality can be used.
-    public func initialise(accessApiContext newAccessApiContext : AccessApiContext,
+    public func initialise(accessSdkOptions newAccessSdkOptions : AccessSdkOptions,
                             handler done: @escaping (Result<DeviceCertificate>) -> Void) throws {
 
-        AMVKit.shared.accessApiContext = newAccessApiContext
+        AMVKit.shared.accessSdkOptions = newAccessSdkOptions
+        
+        // TODO Reset database only if identity has changed
+        self.resetDatabase()
+        
+        if let identity = newAccessSdkOptions.identity {
+           KeysManager.shared.setKeysFromIdentity(identity: identity)
+        }
         
         // The outer do-catch block is used to understand when to reset the DB
         do {
@@ -37,7 +44,7 @@ public struct AMVKit {
             }
             else {
                 try DeviceCertificate.download(publicKey: KeysManager.shared.publicKey,
-                                               accessApiContext: newAccessApiContext) {
+                                               accessSdkOptions: newAccessSdkOptions) {
                     if case .success(let deviceCertificate) = $0 {
                         do {
                             try deviceCertificate.initialiseLocalDevice()
@@ -53,6 +60,7 @@ public struct AMVKit {
                     
                     done($0)
                 }
+                
             }
         }
         catch {
@@ -126,22 +134,26 @@ public struct AMVKit {
             throw Failure.uninitialised
         }
         
-        try AccessCertificates.download(deviceSerial: serial, accessApiContext: accessApiContext!) {
-            switch $0 {
-            case .error(let error):
-                done(.error(error))
-                
-            case .success(var accessCertificates):
-                // Reset the HMKit Access Certificates database
-                LocalDevice.shared.resetStorage()
-                
-                // Remove invalid certificates
-                accessCertificates.removeInvalidCertificates(deviceSerial: serial)
-                
-                // Save and complete
-                accessCertificates.save()
-                done(.success(accessCertificates.all))
+        if let accessSdkOptions = accessSdkOptions {
+            try AccessCertificates.download(deviceSerial: serial, accessApiContext: accessSdkOptions.accessApiContext) {
+                switch $0 {
+                case .error(let error):
+                    done(.error(error))
+                    
+                case .success(var accessCertificates):
+                    // Reset the HMKit Access Certificates database
+                    LocalDevice.shared.resetStorage()
+                    
+                    // Remove invalid certificates
+                    accessCertificates.removeInvalidCertificates(deviceSerial: serial)
+                    
+                    // Save and complete
+                    accessCertificates.save()
+                    done(.success(accessCertificates.all))
+                }
             }
+        } else {
+            throw Failure.uninitialised
         }
     }
     
