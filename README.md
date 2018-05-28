@@ -42,11 +42,11 @@ static var AMVKit.shared
 ```
 
 To start using AMVKit, it has to be *initialised*.  
-The *accessApiContext" contains the URL and credentials to access the amv-access-api backend.
+The *accessSdkOptions* contains the URL, credentials and optional identity to access the amv-access-api backend.
 The *handler*-block is invoked when the *Device Certificate* has been loaded from the local database, or when not present, downloaded from the server.  
 This also *initialises* High Mobility's frameworks, or when any step is unsuccessful, returns an error.
 ```swift
-func initialise(accessApiContext newAccessApiContext, handler done: @escaping (Result<DeviceCertificate>) -> Void) throws
+func initialise(accessSdkOptions newAccessSdkOptions, handler done: @escaping (Result<DeviceCertificate>) -> Void) throws
 ```
 
 After the kit has been initialised, *Access Certificates* can be loaded from the local database, or new ones downloaded from the server (overrides the local database on successful download).  
