@@ -89,12 +89,17 @@ func resetDatabase()
 
 Before sending commands to the vehicle, you have to wait unitl any previous query is finished.
 
-Lock the doors - successful (or not) response is returned in the *connect*-method's *handler*-block.
+Requests the current vehicle state.
+```swift
+func sendCommand(.requestVehicleState) throws
+```
+
+Lock the doors
 ```swift
 func sendCommand(.lockDoors) throws
 ```
 
-Unlock the doors - successful (or not) response is returned in the *connect*-method's *handler*-block.
+Unlock the doors
 ```swift
 func sendCommand(.unlockDoors) throws
 ```
