@@ -2,16 +2,16 @@ import Foundation
 import AutoAPI
 
 struct HmCommandFactory : CommandFactory {
-    static func createCommand(_ commandType: CommandType) -> Command {
+    static func createCommand(_ commandType: CommandType) -> AMVCommand {
         switch commandType {
         case .lockDoors:
-            return SimpleCommand(bytes: AutoAPI.DoorLocksCommand.lockDoorsBytes(.lock))
+            return SimpleCommand(bytes: DoorLocks.lockUnlock(.lock))
             
         case .unlockDoors:
-            return SimpleCommand(bytes : AutoAPI.DoorLocksCommand.lockDoorsBytes(.unlock))
+            return SimpleCommand(bytes : DoorLocks.lockUnlock(.unlock))
             
         case .requestVehicleState:
-            return SimpleCommand(bytes: AutoAPI.VehicleStatusCommand.getStateBytes)
+            return SimpleCommand(bytes: VehicleStatus.getVehicleStatus)
         }
     }
 }

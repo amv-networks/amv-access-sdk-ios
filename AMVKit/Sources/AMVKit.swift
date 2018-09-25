@@ -24,7 +24,7 @@ public struct AMVKit {
     /// - Throws: if an error occured initially
     /// - Warning: Must be called before other functionality can be used.
     public func initialise(accessSdkOptions newAccessSdkOptions : AccessSdkOptions,
-                            handler done: @escaping (Result<DeviceCertificate>) -> Void) throws {
+                            handler done: @escaping (Result<AMVDeviceCertificate>) -> Void) throws {
 
         AMVKit.shared.accessSdkOptions = newAccessSdkOptions
         
@@ -37,13 +37,13 @@ public struct AMVKit {
         
         // The outer do-catch block is used to understand when to reset the DB
         do {
-            if let deviceCertificate = DeviceCertificate.load() {
+            if let deviceCertificate = AMVDeviceCertificate.load() {
                 try deviceCertificate.initialiseLocalDevice()
                 
                 done(.success(deviceCertificate))
             }
             else {
-                try DeviceCertificate.download(publicKey: KeysManager.shared.publicKey,
+                try AMVDeviceCertificate.download(publicKey: KeysManager.shared.publicKey,
                                                accessSdkOptions: newAccessSdkOptions) {
                     if case .success(let deviceCertificate) = $0 {
                         do {
@@ -79,7 +79,7 @@ public struct AMVKit {
     ///   - accessCertificate: certificate (for a device / vehicle) to connect with
     ///   - handler: returns an async error or success (and subsequent updates)
     /// - Throws: if an error occured when starting (other errors are returned async in the handler)
-    public func connect(to accessCertificate: AccessCertificate, handler: @escaping (Result<VehicleUpdate>) -> Void) throws {
+    public func connect(to accessCertificate: AMVAccessCertificate, handler: @escaping (Result<VehicleUpdate>) -> Void) throws {
         // Try to register the certificates-pair with HMKit
         try LocalDevice.shared.registerCertificate(accessCertificate.deviceCertificate)
 
@@ -91,7 +91,7 @@ public struct AMVKit {
         }
 
         // Set the filter and start
-        try LocalDevice.shared.setBroadcastingFilter(vehicleSerial: accessCertificate.deviceCertificate.gainingSerial)
+        LocalDevice.shared.configuration.broadcastingFilter = accessCertificate.deviceCertificate.gainingSerial.data
         try LocalDevice.shared.startBroadcasting()
 
         AMVKit.shared.vehicleUpdateHandler = handler
@@ -100,13 +100,13 @@ public struct AMVKit {
     /// Load Access Certificates from the local database.
     ///
     /// - Returns: the certificates, if any are present
-    public func getAccessCertificates() -> [AccessCertificate]? {
-        guard let _ = DeviceCertificate.load() else {
+    public func getAccessCertificates() -> [AMVAccessCertificate]? {
+        guard let _ = AMVDeviceCertificate.load() else {
             // Makes sure the kit was initialised before
             return nil
         }
         
-        guard let accessCertificates = AccessCertificates.load() else {
+        guard let accessCertificates = AMVAccessCertificates.load() else {
             return nil
         }
         
@@ -117,7 +117,7 @@ public struct AMVKit {
         return accessCertificates.all
     }
     
-    public func getAccessCertificateById(_ identifier: String) -> AccessCertificate? {
+    public func getAccessCertificateById(_ identifier: String) -> AMVAccessCertificate? {
         let accessCertificatesFiltered = getAccessCertificates()?.filter({$0.identifier == identifier})
         return accessCertificatesFiltered?.first
     }
@@ -129,13 +129,13 @@ public struct AMVKit {
     ///
     /// - Parameter done: returns an async error or success
     /// - Throws: if an error occured initially
-    public func refreshAccessCertificates(_ done: @escaping (Result<[AccessCertificate]>) -> Void) throws {
-        guard let serial = DeviceCertificate.load()?.serial else {
+    public func refreshAccessCertificates(_ done: @escaping (Result<[AMVAccessCertificate]>) -> Void) throws {
+        guard let serial = AMVDeviceCertificate.load()?.serial else {
             throw Failure.uninitialised
         }
         
         if let accessSdkOptions = accessSdkOptions {
-            try AccessCertificates.download(deviceSerial: serial, accessApiContext: accessSdkOptions.accessApiContext) {
+            try AMVAccessCertificates.download(deviceSerial: serial, accessApiContext: accessSdkOptions.accessApiContext) {
                 switch $0 {
                 case .error(let error):
                     done(.error(error))
@@ -167,7 +167,7 @@ public struct AMVKit {
     ///   - done: returns an async error or success
     /// - Throws: if an error occured initially
     @available(*, unavailable, message: "Revoke Access Certificate is currently not supported.")
-    public func revokeAccessCertificate(_ accessCertificate: AccessCertificate, done: @escaping (Result<AccessCertificate>) -> Void) throws {
+    public func revokeAccessCertificate(_ accessCertificate: AMVAccessCertificate, done: @escaping (Result<AMVAccessCertificate>) -> Void) throws {
     }
     
     /// Sends a command to the connected and authenticated device.
@@ -198,8 +198,8 @@ public struct AMVKit {
     ///
     /// Deletes the Device Certificate and Access Certificates.
     public func resetDatabase() {
-        AccessCertificates.load()?.delete()
-        DeviceCertificate.load()?.delete()
+        AMVAccessCertificates.load()?.delete()
+        AMVDeviceCertificate.load()?.delete()
         LocalDevice.shared.resetStorage()
 
         KeychainLayer.shared.privateKey = nil

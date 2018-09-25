@@ -10,7 +10,7 @@ extension String {
     /// - returns: Data represented by this hexadecimal string.
     
     func hexadecimal() -> Data? {
-        var data = Data(capacity: characters.count / 2)
+        var data = Data(capacity: count / 2)
         
         let regex = try! NSRegularExpression(pattern: "[0-9a-f]{1,2}", options: .caseInsensitive)
         regex.enumerateMatches(in: self, range: NSMakeRange(0, utf16.count)) { match, flags, stop in

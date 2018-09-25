@@ -10,34 +10,22 @@ public protocol VehicleUpdate {
 }
 
 
-protocol VehicleUpdateInitable: VehicleUpdate {
+protocol VehicleUpdateInitable: VehicleUpdate  {
 
-    associatedtype Command: ResponsePublicValueProtocol, VehicleStatusPublicValueProtocol
-    associatedtype Values
+    associatedtype IncomingCommand: Command
 
-    static var extractedResponseValues: (Command.Response) -> Values { get }
-    static var extractedVSValues: (Command.VehicleStatus) -> Values { get }
 
-    init?(response: Response)
-    init(values: Values)
+    init?(incomingCommand: IncomingCommand)
+    init?(vehicleState: VehicleState)
 }
 
 extension VehicleUpdateInitable {
 
-    init?(response: Response) {
-        switch response.value {
-        case let response as Command.Response:
-            self.init(values: Self.extractedResponseValues(response))
-
-        case let vsResponse as AutoAPI.VehicleStatusCommand.Response:
-            guard let vs = vsResponse.vehicleStatuses.flatMap({ $0.value as? Command.VehicleStatus }).first else {
-                return nil
-            }
-
-            self.init(values: Self.extractedVSValues(vs))
-
-        default:
+    init?(vehicleState: VehicleState) {
+        guard let command = vehicleState as? IncomingCommand else {
             return nil
         }
+
+        self.init(incomingCommand: command)
     }
 }
