@@ -6,38 +6,26 @@ import Foundation
 ///
 /// This could be *charging*, *diagnostics*, *doors* or *keys* update.
 public protocol VehicleUpdate {
-    
+
 }
 
 
-protocol VehicleUpdateInitable: VehicleUpdate {
-    
-    associatedtype Command: ResponsePublicValueProtocol, VehicleStatusPublicValueProtocol
-    associatedtype Values
-    
-    static var extractedResponseValues: (Command.Response) -> Values { get }
-    static var extractedVSValues: (Command.VehicleStatus) -> Values { get }
-    
-    init?(response: Response)
-    init(values: Values)
+protocol VehicleUpdateInitable: VehicleUpdate  {
+
+    associatedtype IncomingCommand: Command
+
+
+    init?(incomingCommand: IncomingCommand)
+    init?(vehicleState: VehicleState)
 }
 
 extension VehicleUpdateInitable {
-    
-    init?(response: Response) {
-        switch response.value {
-        case let response as Command.Response:
-            self.init(values: Self.extractedResponseValues(response))
-            
-        case let vsResponse as AutoAPI.VehicleStatusCommand.Response:
-            guard let vs = vsResponse.vehicleStatuses.compactMap({ $0.value as? Command.VehicleStatus }).first else {
-                return nil
-            }
-            
-            self.init(values: Self.extractedVSValues(vs))
-            
-        default:
+
+    init?(vehicleState: VehicleState) {
+        guard let command = vehicleState as? IncomingCommand else {
             return nil
         }
+
+        self.init(incomingCommand: command)
     }
 }

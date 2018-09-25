@@ -1,5 +1,5 @@
 import Foundation
 
-protocol Command {
+protocol AMVCommand {
     func bytes() -> [UInt8]
 }

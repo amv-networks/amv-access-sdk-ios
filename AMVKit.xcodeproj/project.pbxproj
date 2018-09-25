@@ -6,8 +6,22 @@
 	objectVersion = 48;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		20D3A4011F9777BB00305F06 /* AMVKit Universal */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 20D3A4021F9777BB00305F06 /* Build configuration list for PBXAggregateTarget "AMVKit Universal" */;
+			buildPhases = (
+				20D3A4051F9777C000305F06 /* ShellScript */,
+			);
+			dependencies = (
+			);
+			name = "AMVKit Universal";
+			productName = "AMVKit Universal";
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
-		2002AC661FA35C950011E5EE /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2002AC651FA35C950011E5EE /* Keys.swift */; };
+		2002AC661FA35C950011E5EE /* AMVKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2002AC651FA35C950011E5EE /* AMVKeys.swift */; };
 		201970541F8E04E900B7D64F /* Link+SendCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201970531F8E04E900B7D64F /* Link+SendCommand.swift */; };
 		203BC2551F7E4046002CCE9C /* AMVKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 203BC2531F7E4046002CCE9C /* AMVKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		204449CB1F7E46D700F5C55E /* AMVKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204449CA1F7E46D700F5C55E /* AMVKit.swift */; };
@@ -21,11 +35,11 @@
 		2088B5A41F8B63D30066413C /* ServerError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2088B5A31F8B63D30066413C /* ServerError.swift */; };
 		2088B5AD1F8B98C20066413C /* URLRequest+AMVNonce.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2088B5AC1F8B98C20066413C /* URLRequest+AMVNonce.swift */; };
 		209E94DD1F90B51B00A25452 /* VehicleUpdate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209E94DC1F90B51B00A25452 /* VehicleUpdate.swift */; };
-		209E94E31F90B6DB00A25452 /* Charging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209E94E21F90B6DB00A25452 /* Charging.swift */; };
-		209E94E51F90B9D000A25452 /* Diagnostics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209E94E41F90B9D000A25452 /* Diagnostics.swift */; };
+		209E94E31F90B6DB00A25452 /* AMVCharging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209E94E21F90B6DB00A25452 /* AMVCharging.swift */; };
+		209E94E51F90B9D000A25452 /* AMVDiagnostics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209E94E41F90B9D000A25452 /* AMVDiagnostics.swift */; };
 		20AFD1071F98C93600073A85 /* BluetoothManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20AFD1061F98C93600073A85 /* BluetoothManager.swift */; };
-		20BEB3981FBC9087000F4B8E /* ConnectionStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20BEB3971FBC9087000F4B8E /* ConnectionStatus.swift */; };
-		20DA5D761F8CFD1F0065204E /* Doors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20DA5D751F8CFD1F0065204E /* Doors.swift */; };
+		20BEB3981FBC9087000F4B8E /* AMVConnectionStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20BEB3971FBC9087000F4B8E /* AMVConnectionStatus.swift */; };
+		20DA5D761F8CFD1F0065204E /* AMVDoors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20DA5D751F8CFD1F0065204E /* AMVDoors.swift */; };
 		20F78DA91F8BBF5B006191F4 /* AmvAccessCertificates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F78DA81F8BBF5B006191F4 /* AmvAccessCertificates.swift */; };
 		20F78DAB1F8BD6BC006191F4 /* URLSession+ModelParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F78DAA1F8BD6BC006191F4 /* URLSession+ModelParser.swift */; };
 		3109450421529A2800CB8E3F /* HMCryptoKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3109450321529A2800CB8E3F /* HMCryptoKit.framework */; };
@@ -35,7 +49,6 @@
 		318B2F912060F94800C94379 /* IdentityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318B2F902060F94800C94379 /* IdentityManager.swift */; };
 		318B2F9620610A5400C94379 /* AccessSdkOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318B2F9520610A5400C94379 /* AccessSdkOptions.swift */; };
 		318B2F9E2061487F00C94379 /* String+Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318B2F9D2061487F00C94379 /* String+Data.swift */; };
-		31AC33542165F08C001AC237 /* HMUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31AC33532165F08B001AC237 /* HMUtilities.framework */; };
 		31F5EB6720108CD7001F3BEC /* CommandFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F5EB6620108CD7001F3BEC /* CommandFactory.swift */; };
 		31F5EB6920108DF1001F3BEC /* Command.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F5EB6820108DF1001F3BEC /* Command.swift */; };
 		31F5EB6B201090E2001F3BEC /* CommandType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F5EB6A201090E2001F3BEC /* CommandType.swift */; };
@@ -45,7 +58,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		2002AC651FA35C950011E5EE /* Keys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keys.swift; sourceTree = "<group>"; };
+		2002AC651FA35C950011E5EE /* AMVKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AMVKeys.swift; sourceTree = "<group>"; };
 		201970531F8E04E900B7D64F /* Link+SendCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Link+SendCommand.swift"; sourceTree = "<group>"; };
 		203BC2501F7E4046002CCE9C /* AMVKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AMVKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		203BC2531F7E4046002CCE9C /* AMVKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AMVKit.h; sourceTree = "<group>"; };
@@ -64,12 +77,12 @@
 		2088B5A31F8B63D30066413C /* ServerError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerError.swift; sourceTree = "<group>"; };
 		2088B5AC1F8B98C20066413C /* URLRequest+AMVNonce.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLRequest+AMVNonce.swift"; sourceTree = "<group>"; };
 		209E94DC1F90B51B00A25452 /* VehicleUpdate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleUpdate.swift; sourceTree = "<group>"; };
-		209E94E21F90B6DB00A25452 /* Charging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Charging.swift; sourceTree = "<group>"; };
-		209E94E41F90B9D000A25452 /* Diagnostics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Diagnostics.swift; sourceTree = "<group>"; };
+		209E94E21F90B6DB00A25452 /* AMVCharging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AMVCharging.swift; sourceTree = "<group>"; };
+		209E94E41F90B9D000A25452 /* AMVDiagnostics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AMVDiagnostics.swift; sourceTree = "<group>"; };
 		20AFD1061F98C93600073A85 /* BluetoothManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothManager.swift; sourceTree = "<group>"; };
-		20BEB3971FBC9087000F4B8E /* ConnectionStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionStatus.swift; sourceTree = "<group>"; };
+		20BEB3971FBC9087000F4B8E /* AMVConnectionStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AMVConnectionStatus.swift; sourceTree = "<group>"; };
 		20D3A3FE1F97742400305F06 /* AutoAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AutoAPI.framework; path = ../Frameworks/AutoAPI.framework; sourceTree = "<group>"; };
-		20DA5D751F8CFD1F0065204E /* Doors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Doors.swift; sourceTree = "<group>"; };
+		20DA5D751F8CFD1F0065204E /* AMVDoors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AMVDoors.swift; sourceTree = "<group>"; };
 		20F78DA81F8BBF5B006191F4 /* AmvAccessCertificates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmvAccessCertificates.swift; sourceTree = "<group>"; };
 		20F78DAA1F8BD6BC006191F4 /* URLSession+ModelParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+ModelParser.swift"; sourceTree = "<group>"; };
 		3109450321529A2800CB8E3F /* HMCryptoKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = HMCryptoKit.framework; sourceTree = "<group>"; };
@@ -77,7 +90,6 @@
 		318B2F902060F94800C94379 /* IdentityManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentityManager.swift; sourceTree = "<group>"; };
 		318B2F9520610A5400C94379 /* AccessSdkOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessSdkOptions.swift; sourceTree = "<group>"; };
 		318B2F9D2061487F00C94379 /* String+Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Data.swift"; sourceTree = "<group>"; };
-		31AC33532165F08B001AC237 /* HMUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = HMUtilities.framework; sourceTree = "<group>"; };
 		31F5EB6620108CD7001F3BEC /* CommandFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandFactory.swift; sourceTree = "<group>"; };
 		31F5EB6820108DF1001F3BEC /* Command.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Command.swift; sourceTree = "<group>"; };
 		31F5EB6A201090E2001F3BEC /* CommandType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandType.swift; sourceTree = "<group>"; };
@@ -91,7 +103,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				31AC33542165F08C001AC237 /* HMUtilities.framework in Frameworks */,
 				3109450421529A2800CB8E3F /* HMCryptoKit.framework in Frameworks */,
 				313AC97B207380EF00062E74 /* AutoAPI.framework in Frameworks */,
 				313AC97C207380EF00062E74 /* HMKit.framework in Frameworks */,
@@ -189,11 +200,11 @@
 		209E94DE1F90B5E100A25452 /* Vehicle */ = {
 			isa = PBXGroup;
 			children = (
-				209E94E21F90B6DB00A25452 /* Charging.swift */,
-				20BEB3971FBC9087000F4B8E /* ConnectionStatus.swift */,
-				209E94E41F90B9D000A25452 /* Diagnostics.swift */,
-				20DA5D751F8CFD1F0065204E /* Doors.swift */,
-				2002AC651FA35C950011E5EE /* Keys.swift */,
+				209E94E21F90B6DB00A25452 /* AMVCharging.swift */,
+				20BEB3971FBC9087000F4B8E /* AMVConnectionStatus.swift */,
+				209E94E41F90B9D000A25452 /* AMVDiagnostics.swift */,
+				20DA5D751F8CFD1F0065204E /* AMVDoors.swift */,
+				2002AC651FA35C950011E5EE /* AMVKeys.swift */,
 			);
 			path = Vehicle;
 			sourceTree = "<group>";
@@ -221,7 +232,6 @@
 		209F0C3E1F7E40C4008BB3F6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				31AC33532165F08B001AC237 /* HMUtilities.framework */,
 				3109450321529A2800CB8E3F /* HMCryptoKit.framework */,
 				20D3A3FE1F97742400305F06 /* AutoAPI.framework */,
 				204449BB1F7E41FC00F5C55E /* HMKit.framework */,
@@ -297,6 +307,10 @@
 						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 					};
+					20D3A4011F9777BB00305F06 = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
+					};
 				};
 			};
 			buildConfigurationList = 203BC24A1F7E4046002CCE9C /* Build configuration list for PBXProject "AMVKit" */;
@@ -312,6 +326,7 @@
 			projectRoot = "";
 			targets = (
 				203BC24F1F7E4046002CCE9C /* AMVKit */,
+				20D3A4011F9777BB00305F06 /* AMVKit Universal */,
 			);
 		};
 /* End PBXProject section */
@@ -326,13 +341,29 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		20D3A4051F9777C000305F06 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/bin/sh \"${SRCROOT}/AMVKit/Supporting/UniversalBuildScript.sh\"";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		203BC24B1F7E4046002CCE9C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				31F5EB7020109B06001F3BEC /* SimpleCommand.swift in Sources */,
-				209E94E31F90B6DB00A25452 /* Charging.swift in Sources */,
+				209E94E31F90B6DB00A25452 /* AMVCharging.swift in Sources */,
 				204449E31F7E502A00F5C55E /* Collection+UInt8.swift in Sources */,
 				204449D31F7E485A00F5C55E /* KeysManager.swift in Sources */,
 				31F5EB7420176F95001F3BEC /* AccessApiContext.swift in Sources */,
@@ -340,22 +371,22 @@
 				204449E11F7E4C5500F5C55E /* Storable.swift in Sources */,
 				204449CB1F7E46D700F5C55E /* AMVKit.swift in Sources */,
 				31F5EB6E20109987001F3BEC /* HmCommandFactory.swift in Sources */,
-				209E94E51F90B9D000A25452 /* Diagnostics.swift in Sources */,
+				209E94E51F90B9D000A25452 /* AMVDiagnostics.swift in Sources */,
 				204449D01F7E485300F5C55E /* KeychainLayer.swift in Sources */,
 				318B2F8F2060F93100C94379 /* Identity.swift in Sources */,
 				2047E7E31F8BA4E800B5261F /* AmvDeviceCertificate.swift in Sources */,
-				20DA5D761F8CFD1F0065204E /* Doors.swift in Sources */,
+				20DA5D761F8CFD1F0065204E /* AMVDoors.swift in Sources */,
 				31F5EB6920108DF1001F3BEC /* Command.swift in Sources */,
 				318B2F9620610A5400C94379 /* AccessSdkOptions.swift in Sources */,
 				204449E81F7E530400F5C55E /* Miscellaneous.swift in Sources */,
 				2047E7E51F8BA97100B5261F /* URL+AMV.swift in Sources */,
-				20BEB3981FBC9087000F4B8E /* ConnectionStatus.swift in Sources */,
+				20BEB3981FBC9087000F4B8E /* AMVConnectionStatus.swift in Sources */,
 				20F78DAB1F8BD6BC006191F4 /* URLSession+ModelParser.swift in Sources */,
 				20AFD1071F98C93600073A85 /* BluetoothManager.swift in Sources */,
 				318B2F9E2061487F00C94379 /* String+Data.swift in Sources */,
 				2088B5AD1F8B98C20066413C /* URLRequest+AMVNonce.swift in Sources */,
 				201970541F8E04E900B7D64F /* Link+SendCommand.swift in Sources */,
-				2002AC661FA35C950011E5EE /* Keys.swift in Sources */,
+				2002AC661FA35C950011E5EE /* AMVKeys.swift in Sources */,
 				209E94DD1F90B51B00A25452 /* VehicleUpdate.swift in Sources */,
 				20F78DA91F8BBF5B006191F4 /* AmvAccessCertificates.swift in Sources */,
 				31F5EB6720108CD7001F3BEC /* CommandFactory.swift in Sources */,
@@ -507,7 +538,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = org.amv.kit;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -529,8 +560,26 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = org.amv.kit;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		20D3A4031F9777BB00305F06 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = F42CFRE556;
+				PRODUCT_NAME = AMVKit;
+			};
+			name = Debug;
+		};
+		20D3A4041F9777BB00305F06 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = F42CFRE556;
+				PRODUCT_NAME = AMVKit;
 			};
 			name = Release;
 		};
@@ -551,6 +600,15 @@
 			buildConfigurations = (
 				203BC2591F7E4046002CCE9C /* Debug */,
 				203BC25A1F7E4046002CCE9C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		20D3A4021F9777BB00305F06 /* Build configuration list for PBXAggregateTarget "AMVKit Universal" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				20D3A4031F9777BB00305F06 /* Debug */,
+				20D3A4041F9777BB00305F06 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
