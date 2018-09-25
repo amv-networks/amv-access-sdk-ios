@@ -30,7 +30,7 @@ public struct AMVKit {
         
         if let identity = newAccessSdkOptions.identity {
             // TODO Reset database only if identity has changed
-            self.resetDatabase()
+            //self.resetDatabase()
             
            KeysManager.shared.setKeysFromIdentity(identity: identity)
         }
