@@ -28,11 +28,11 @@ public struct AMVKit {
 
         AMVKit.shared.accessSdkOptions = newAccessSdkOptions
         
+        
         if let identity = newAccessSdkOptions.identity {
             // TODO Reset database only if identity has changed
-            //self.resetDatabase()
-            
-           KeysManager.shared.setKeysFromIdentity(identity: identity)
+            self.resetDatabase()
+            KeysManager.shared.setKeysFromIdentity(identity: identity)
         }
         
         // The outer do-catch block is used to understand when to reset the DB
@@ -84,6 +84,8 @@ public struct AMVKit {
         try LocalDevice.shared.registerCertificate(accessCertificate.deviceCertificate)
 
         LocalDevice.shared.storeCertificate(accessCertificate.vehicleCertificate)
+        
+        LocalDevice.shared.configuration.isAlivePingActive = true
 
         // Just in case it was started before with a different one
         if LocalDevice.shared.state == .broadcasting {
@@ -93,6 +95,7 @@ public struct AMVKit {
         // Set the filter and start
         LocalDevice.shared.configuration.broadcastingFilter = accessCertificate.deviceCertificate.gainingSerial.data
         try LocalDevice.shared.startBroadcasting()
+        
 
         AMVKit.shared.vehicleUpdateHandler = handler
     }

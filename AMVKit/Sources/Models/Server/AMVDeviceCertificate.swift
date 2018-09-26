@@ -28,7 +28,7 @@ public struct AMVDeviceCertificate {
     // MARK: Methods
 
     static func download(publicKey: Data, accessSdkOptions: AccessSdkOptions, completion: @escaping (Result<AMVDeviceCertificate>) -> Void) throws {
-        let accessApiContext = accessSdkOptions.accessApiContext
+        /*let accessApiContext = accessSdkOptions.accessApiContext
         
         guard let url = getDeviceCertificateURL(accessSdkOptions: accessSdkOptions) else {
             throw Failure.invalidURL
@@ -55,7 +55,14 @@ public struct AMVDeviceCertificate {
             }
 
             return try JSONDecoder().decode(AMVDeviceCertificate.self, from: $0)
-        }.resume()
+        }.resume()*/
+        
+        let certBase64 = ""
+        let issuerBase64 = ""
+        let amv = AMVDeviceCertificate(issuerPublicKey: issuerBase64, value: certBase64)
+        let result = Result.success(amv)
+        
+        completion(result)
     }
 
     func initialiseLocalDevice() throws {
