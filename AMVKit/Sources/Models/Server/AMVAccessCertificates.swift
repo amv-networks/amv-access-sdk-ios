@@ -30,7 +30,7 @@ struct AMVAccessCertificates: Codable {
     }
 
     static func download(deviceSerial: Hex, accessApiContext: AccessApiContext, completion: @escaping (Result<AMVAccessCertificates>) -> Void) throws {
-        /*guard let url = URL(baseUrl: accessApiContext.baseUrl, suffix: "/device/\(deviceSerial.lowercased())/access_certificates") else {
+        guard let url = URL(baseUrl: accessApiContext.baseUrl, suffix: "/device/\(deviceSerial.lowercased())/access_certificates") else {
             throw Failure.invalidURL
         }
 
@@ -42,21 +42,7 @@ struct AMVAccessCertificates: Codable {
             }
 
             return try JSONDecoder().decode(AMVAccessCertificates.self, from: $0)
-        }.resume()*/
-        
-        let deviceBase64 = ""
-        let deviceCert = AccessCertificate(base64Encoded: deviceBase64)
-        let vehicleBase64 = ""
-        let vehicleCert = AccessCertificate(base64Encoded: vehicleBase64)
-        
-        assert(deviceCert != nil, "Device cert is nil")
-        assert(vehicleCert != nil, "Vehicle cert is nil")
-        
-        let cert1 = AMVAccessCertificate(name: "test", identifier: "d3cc5236-07c3-4b26-8eb1-9851afa9dfac", deviceValue: deviceBase64, deviceCertificate: deviceCert!, vehicleValue: vehicleBase64, vehicleCertificate: vehicleCert!)
-        let cert2 = AMVAccessCertificate(name: "test", identifier: "d3cc5236-07c3-4b26-8eb1-9851afa9dfac", deviceValue: vehicleBase64, deviceCertificate: vehicleCert!, vehicleValue: deviceBase64, vehicleCertificate: deviceCert!)
-        let result = Result.success(AMVAccessCertificates(all: [cert1, cert2]))
-        
-        completion(result)
+        }.resume()
     }
 
 
