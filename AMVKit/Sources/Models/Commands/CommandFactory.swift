@@ -4,5 +4,5 @@ import Foundation
 
 
 protocol CommandFactory {
-    static func createCommand(_ commandType : CommandType) -> AMVCommand
+    static func createCommand(_ commandType : CommandType) -> Command
 }

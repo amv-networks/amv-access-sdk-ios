@@ -1,6 +1,6 @@
 import Foundation
 
-struct SimpleCommand: AMVCommand {
+struct SimpleCommand: Command {
     let command : [UInt8]
     
     init(bytes : [UInt8]) {
