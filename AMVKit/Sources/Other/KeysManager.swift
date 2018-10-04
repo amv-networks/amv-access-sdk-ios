@@ -1,5 +1,5 @@
 import Foundation
-import HMCrypto
+import HMCryptoKit
 
 public struct KeysManager {
 
@@ -29,10 +29,12 @@ public struct KeysManager {
         if !AMVKit.shared.isFirstLaunch, let privateKey = KeychainLayer.shared.privateKey, let publicKey = KeychainLayer.shared.publicKey {
             self.privateKey = privateKey
             self.publicKey = publicKey
-        } else {
-            let keyPair = HMCryptor.generateKeyPair()
-            self.privateKey = keyPair.privateKey
-            self.publicKey = keyPair.publicKey
+        }
+        else {
+            let keyPair = try! HMCryptoKit.keys()
+
+            self.privateKey = keyPair.privateKey.data
+            self.publicKey = keyPair.publicKey.data
             
             self.storeKeys(privateKey: self.privateKey, publicKey: self.publicKey)
         }

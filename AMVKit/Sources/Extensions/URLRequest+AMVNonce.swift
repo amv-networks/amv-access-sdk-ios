@@ -1,5 +1,5 @@
 import Foundation
-import HMCrypto
+import HMCryptoKit
 import Security
 
 
@@ -12,7 +12,8 @@ extension URLRequest {
             throw Failure.nonceGeneration
         }
 
-        let signature = HMCryptor.signature(for: nonce.data, privateKey: KeysManager.shared.privateKey)
+        let privateKey = try HMCryptoKit.privateKey(privateKeyBinary: KeysManager.shared.privateKey, publicKeyBinary: KeysManager.shared.publicKey)
+        let signature = try HMCryptoKit.signature(message: nonce, privateKey: privateKey)
 
         setValue(nonce.base64String, forHTTPHeaderField: "amv-api-nonce")
         setValue(signature.base64String, forHTTPHeaderField: "amv-api-signature")
