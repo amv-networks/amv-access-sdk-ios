@@ -4,7 +4,7 @@
 
 ## What is this repository for? ##
 
-This repository contains the *Xcode 9* project for AMVKit.  
+This repository contains the *Xcode 10* project for AMVKit.  
 The kit has functionality for *downloading*, *storing* and *using* a **Device Certificate**.  
 The same is done for **Access Certificates** with the additional functionality to *delete* them.
 
@@ -52,10 +52,10 @@ func initialise(accessSdkOptions newAccessSdkOptions, handler done: @escaping (R
 After the kit has been initialised, *Access Certificates* can be loaded from the local database, or new ones downloaded from the server (overrides the local database on successful download).  
 Downloading new certificates also registers them with High Mobility's frameworks.
 ```swift
-func getAccessCertificates() -> [AccessCertificate]?
+func getAccessCertificates() -> [AmvAccessCertificate]?
 ```
 ```swift
-func refreshAccessCertificates(_ done: @escaping (Result<[AccessCertificate]>) -> Void) throws
+func refreshAccessCertificates(_ done: @escaping (Result<[AmvAccessCertificate]>) -> Void) throws
 ```
 
 To connect to a vehicle, an *Access Certificate* has to be chosen and then passed to the method.  
@@ -63,7 +63,7 @@ This starts *bluetooth* broadcasting with the vehicle serial in the advertisment
 After a suitable vehicle has been found, the connection is established, authenticated and the initial state is queried.  
 The method's *handler*-block is invoked **each time** the device receives new data from the vehicle, or once for a disconnect.
 ```swift
-func connect(to accessCertificate: AccessCertificate, handler: @escaping (Result<VehicleUpdate>) -> Void) throws
+func connect(to accessCertificate: AmvAccessCertificate, handler: @escaping (Result<VehicleUpdate>) -> Void) throws
 ```
 
 ### Additional Methods ###
@@ -71,7 +71,7 @@ func connect(to accessCertificate: AccessCertificate, handler: @escaping (Result
 Deleting an *Access Certificate* first tries to delete it from the *server*.  
 If successful, it's deleted from the *local database* as well and the *done*-block is invoked with the deleted certificate for reference.
 ```swift
-func deleteAccessCertificate(_ accessCertificate: AccessCertificate, done: @escaping (Result<AccessCertificate>) -> Void) throws
+func deleteAccessCertificate(_ accessCertificate: AmvAccessCertificate, done: @escaping (Result<AmvAccessCertificate>) -> Void) throws
 ```
 
 Disconnect from a connected vehicle.  
