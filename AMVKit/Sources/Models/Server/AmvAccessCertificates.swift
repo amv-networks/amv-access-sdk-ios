@@ -4,7 +4,7 @@ import HMKit
 
 struct AMVAccessCertificates: Codable {
 
-    internal(set) var all: [AMVAccessCertificate]
+    internal(set) var all: [AmvAccessCertificate]
 
 
     // MARK: CodingKey
@@ -16,7 +16,7 @@ struct AMVAccessCertificates: Codable {
 
     // MARK: Methods
 
-    static func deleteFromDatabase(accessCertificate: AMVAccessCertificate) {
+    static func deleteFromDatabase(accessCertificate: AmvAccessCertificate) {
         var accessCertificates = AMVAccessCertificates.load()
 
         if let idx = accessCertificates?.all.index(where: { $0.identifier == accessCertificate.identifier }) {
@@ -26,7 +26,7 @@ struct AMVAccessCertificates: Codable {
     }
 
     @available(*, unavailable, message: "Delete Access Certificate from server is not supported.")
-    static func deleteFromServer(accessCertificate: AMVAccessCertificate, deviceSerial: Hex, completion: @escaping (Result<AMVAccessCertificate>) -> Void) throws {
+    static func deleteFromServer(accessCertificate: AmvAccessCertificate, deviceSerial: Hex, completion: @escaping (Result<AmvAccessCertificate>) -> Void) throws {
     }
 
     static func download(deviceSerial: Hex, accessApiContext: AccessApiContext, completion: @escaping (Result<AMVAccessCertificates>) -> Void) throws {
@@ -54,7 +54,7 @@ struct AMVAccessCertificates: Codable {
 extension AMVAccessCertificates: Storable { }
 
 
-public struct AMVAccessCertificate {
+public struct AmvAccessCertificate {
 
     /// A name
     public let name: String
@@ -87,7 +87,7 @@ public struct AMVAccessCertificate {
     let vehicleCertificate: AccessCertificate
 }
 
-extension AMVAccessCertificate: Codable {
+extension AmvAccessCertificate: Codable {
 
     enum Keys: String, CodingKey {
         case identifier = "id"
@@ -135,9 +135,9 @@ extension AMVAccessCertificate: Codable {
     }
 }
 
-extension AMVAccessCertificate: Equatable {
+extension AmvAccessCertificate: Equatable {
 
-    public static func ==(lhs: AMVAccessCertificate, rhs: AMVAccessCertificate) -> Bool {
+    public static func ==(lhs: AmvAccessCertificate, rhs: AmvAccessCertificate) -> Bool {
         return (lhs.identifier == rhs.identifier) && (lhs.name == rhs.name) && (lhs.deviceValue == rhs.deviceValue) && (lhs.vehicleValue == rhs.vehicleValue)
     }
 }

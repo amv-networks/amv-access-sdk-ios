@@ -30,7 +30,7 @@
 		204449E11F7E4C5500F5C55E /* Storable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204449DA1F7E487600F5C55E /* Storable.swift */; };
 		204449E31F7E502A00F5C55E /* Collection+UInt8.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204449E21F7E502A00F5C55E /* Collection+UInt8.swift */; };
 		204449E81F7E530400F5C55E /* Miscellaneous.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204449E71F7E530400F5C55E /* Miscellaneous.swift */; };
-		2047E7E31F8BA4E800B5261F /* AMVDeviceCertificate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2047E7E21F8BA4E800B5261F /* AMVDeviceCertificate.swift */; };
+		2047E7E31F8BA4E800B5261F /* AmvDeviceCertificate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2047E7E21F8BA4E800B5261F /* AmvDeviceCertificate.swift */; };
 		2047E7E51F8BA97100B5261F /* URL+AMV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2047E7E41F8BA97100B5261F /* URL+AMV.swift */; };
 		2088B5A41F8B63D30066413C /* ServerError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2088B5A31F8B63D30066413C /* ServerError.swift */; };
 		2088B5AD1F8B98C20066413C /* URLRequest+AMVNonce.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2088B5AC1F8B98C20066413C /* URLRequest+AMVNonce.swift */; };
@@ -40,7 +40,7 @@
 		20AFD1071F98C93600073A85 /* BluetoothManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20AFD1061F98C93600073A85 /* BluetoothManager.swift */; };
 		20BEB3981FBC9087000F4B8E /* ConnectionStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20BEB3971FBC9087000F4B8E /* ConnectionStatus.swift */; };
 		20DA5D761F8CFD1F0065204E /* Doors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20DA5D751F8CFD1F0065204E /* Doors.swift */; };
-		20F78DA91F8BBF5B006191F4 /* AMVAccessCertificates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F78DA81F8BBF5B006191F4 /* AMVAccessCertificates.swift */; };
+		20F78DA91F8BBF5B006191F4 /* AmvAccessCertificates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F78DA81F8BBF5B006191F4 /* AmvAccessCertificates.swift */; };
 		20F78DAB1F8BD6BC006191F4 /* URLSession+ModelParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F78DAA1F8BD6BC006191F4 /* URLSession+ModelParser.swift */; };
 		3109450421529A2800CB8E3F /* HMCryptoKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3109450321529A2800CB8E3F /* HMCryptoKit.framework */; };
 		313AC97B207380EF00062E74 /* AutoAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20D3A3FE1F97742400305F06 /* AutoAPI.framework */; };
@@ -71,7 +71,7 @@
 		204449DA1F7E487600F5C55E /* Storable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storable.swift; sourceTree = "<group>"; };
 		204449E21F7E502A00F5C55E /* Collection+UInt8.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+UInt8.swift"; sourceTree = "<group>"; };
 		204449E71F7E530400F5C55E /* Miscellaneous.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Miscellaneous.swift; sourceTree = "<group>"; };
-		2047E7E21F8BA4E800B5261F /* AMVDeviceCertificate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AMVDeviceCertificate.swift; sourceTree = "<group>"; };
+		2047E7E21F8BA4E800B5261F /* AmvDeviceCertificate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmvDeviceCertificate.swift; sourceTree = "<group>"; };
 		2047E7E41F8BA97100B5261F /* URL+AMV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+AMV.swift"; sourceTree = "<group>"; };
 		206CA23B1F97738B00E177D9 /* AppStoreCompatible.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = AppStoreCompatible.sh; sourceTree = "<group>"; };
 		206CA23C1F97738B00E177D9 /* UniversalBuildScript.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = UniversalBuildScript.sh; sourceTree = "<group>"; };
@@ -84,7 +84,7 @@
 		20BEB3971FBC9087000F4B8E /* ConnectionStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionStatus.swift; sourceTree = "<group>"; };
 		20D3A3FE1F97742400305F06 /* AutoAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AutoAPI.framework; path = ../Frameworks/AutoAPI.framework; sourceTree = "<group>"; };
 		20DA5D751F8CFD1F0065204E /* Doors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Doors.swift; sourceTree = "<group>"; };
-		20F78DA81F8BBF5B006191F4 /* AMVAccessCertificates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AMVAccessCertificates.swift; sourceTree = "<group>"; };
+		20F78DA81F8BBF5B006191F4 /* AmvAccessCertificates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmvAccessCertificates.swift; sourceTree = "<group>"; };
 		20F78DAA1F8BD6BC006191F4 /* URLSession+ModelParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+ModelParser.swift"; sourceTree = "<group>"; };
 		3109450321529A2800CB8E3F /* HMCryptoKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = HMCryptoKit.framework; sourceTree = "<group>"; };
 		318B2F8E2060F93100C94379 /* Identity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Identity.swift; sourceTree = "<group>"; };
@@ -224,8 +224,8 @@
 		209E94E11F90B63B00A25452 /* Server */ = {
 			isa = PBXGroup;
 			children = (
-				20F78DA81F8BBF5B006191F4 /* AMVAccessCertificates.swift */,
-				2047E7E21F8BA4E800B5261F /* AMVDeviceCertificate.swift */,
+				20F78DA81F8BBF5B006191F4 /* AmvAccessCertificates.swift */,
+				2047E7E21F8BA4E800B5261F /* AmvDeviceCertificate.swift */,
 				2088B5A31F8B63D30066413C /* ServerError.swift */,
 				31F5EB7320176F95001F3BEC /* AccessApiContext.swift */,
 			);
@@ -378,7 +378,7 @@
 				209E94E51F90B9D000A25452 /* Diagnostics.swift in Sources */,
 				204449D01F7E485300F5C55E /* KeychainLayer.swift in Sources */,
 				318B2F8F2060F93100C94379 /* Identity.swift in Sources */,
-				2047E7E31F8BA4E800B5261F /* AMVDeviceCertificate.swift in Sources */,
+				2047E7E31F8BA4E800B5261F /* AmvDeviceCertificate.swift in Sources */,
 				20DA5D761F8CFD1F0065204E /* Doors.swift in Sources */,
 				31F5EB6920108DF1001F3BEC /* Command.swift in Sources */,
 				318B2F9620610A5400C94379 /* AccessSdkOptions.swift in Sources */,
@@ -392,7 +392,7 @@
 				201970541F8E04E900B7D64F /* Link+SendCommand.swift in Sources */,
 				2002AC661FA35C950011E5EE /* Keys.swift in Sources */,
 				209E94DD1F90B51B00A25452 /* VehicleUpdate.swift in Sources */,
-				20F78DA91F8BBF5B006191F4 /* AMVAccessCertificates.swift in Sources */,
+				20F78DA91F8BBF5B006191F4 /* AmvAccessCertificates.swift in Sources */,
 				31F5EB6720108CD7001F3BEC /* CommandFactory.swift in Sources */,
 				31F5EB6B201090E2001F3BEC /* CommandType.swift in Sources */,
 				2088B5A41F8B63D30066413C /* ServerError.swift in Sources */,

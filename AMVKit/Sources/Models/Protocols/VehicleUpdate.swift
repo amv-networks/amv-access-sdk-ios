@@ -30,7 +30,7 @@ extension VehicleUpdateInitable {
             self.init(values: Self.extractedResponseValues(response))
             
         case let vsResponse as AutoAPI.VehicleStatusCommand.Response:
-            guard let vs = vsResponse.vehicleStatuses.flatMap({ $0.value as? Command.VehicleStatus }).first else {
+            guard let vs = vsResponse.vehicleStatuses.compactMap({ $0.value as? Command.VehicleStatus }).first else {
                 return nil
             }
             
