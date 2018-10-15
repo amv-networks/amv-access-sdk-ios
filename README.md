@@ -23,9 +23,10 @@ gem install cocoapods
 
 # (or if the above fails)
 sudo gem install cocoapods
-
+```
 Update your local specs repo by running:
 
+```bash
 pod repo update
 ```
 
