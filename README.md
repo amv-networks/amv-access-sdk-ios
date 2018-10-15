@@ -1,4 +1,5 @@
 [![License](https://img.shields.io/github/license/amv-networks/amv-access-sdk-ios-reference-app.svg?maxAge=2592000)](https://github.com/amv-networks/amv-access-sdk-ios-reference-app/blob/master/LICENSE)
+[![CocoaPods](https://img.shields.io/cocoapods/v/AMVKit.svg)](https://cocoapods.org/pods/AMVKit)
 
 # AMVKit #
 
@@ -11,28 +12,34 @@ The same is done for **Access Certificates** with the additional functionality t
 Furthermore, the kit enables *easy* bluetooth broadcasting and connection with *access certificates*.  
 Lastly, it has 2 easy to use methods for vehicle doors – *lock* and *unlock*.
 
-## How do I get set up? ##
+## Installation ##
 
-* Clone it with some application or download the repository (not recommended)
+### CocoaPods
 
-There are 2 ways to build the **AMVKit** framework
+Make sure you are running the latest version of [CocoaPods](https://cocoapods.org) by running:
 
-* On the commandline (recommended)
-    * execute `sh BuildScript.sh -deviceOnly` for a *device-only* framework
-    * execute `sh BuildScript.sh` for a *universal* framework (recommended)
-* Open the *AMVKit.xcodeproj* with Xcode 9+
-    * Build against *AMVKit* for a *device-only* framework
-	* Build against *AMVKit Universal* for a *universal* framework
+```bash
+gem install cocoapods
 
-## Using the frameworks in an app ##
+# (or if the above fails)
+sudo gem install cocoapods
 
-### Embedding ###
+Update your local specs repo by running:
 
-* Drag all 4 frameworks into *Embedded Binaries* in Xcode project view (check Copy)
-    * Can leave only *AMVKit* in *Linked Frameworks...* list (of the 4)
-* Before uploading to *iTunes Connect* the frameworks need to be **thinned** (simulator slices removed; only *universal* frameworks):
-    * Navigate to each *framework*'s folder in Terminal (inside the .framework)
-    * Execute the *AppStoreCompatible.sh* script there (also contains the instructions)
+pod repo update
+```
+
+**Note:** This step is optional, if you updated the specs repo recently.
+
+Add the following lines to your Podfile:
+
+```ruby
+pod 'AMVKit'
+```
+
+Run `pod install` and you're all set!
+
+## Usage ##
 
 ### Main Methods ###
 
