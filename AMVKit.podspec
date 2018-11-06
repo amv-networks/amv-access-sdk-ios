@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'AMVKit'
-  s.version          = '0.4.4'
+  s.version          = '0.4.5'
   s.summary          = 'AMV Access SDK for iOS'
   s.description      = <<-DESC
 The pod has functionality for downloading, storing and using a Device Certificate.
@@ -17,7 +17,7 @@ Lastly, it has 2 easy to use methods for vehicle doors – lock and unlock.
  
   s.ios.deployment_target = '10.0'
   s.source_files =  "AMVKit/**/*"
-  s.exclude_files = "**/*/Info.plist","**/*/*.sh"
+  s.exclude_files = "**/*/Info.plist"
   s.vendored_frameworks = "Frameworks/*"
   s.swift_version = '4.2' 
 end
