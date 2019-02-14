@@ -30,7 +30,7 @@ struct AmvAccessCertificates: Codable {
     }
 
     static func download(deviceSerial: Hex, accessApiContext: AccessApiContext, completion: @escaping (Result<AmvAccessCertificates>) -> Void) throws {
-        guard let url = URL(baseUrl: accessApiContext.baseUrl, suffix: "/device/\(deviceSerial.lowercased())/access_certificates") else {
+        guard let url = URL(baseUrl: accessApiContext.baseUrl, suffix: "/device/\(deviceSerial.lowercased())/access_certificates?certificate_version=1") else {
             throw Failure.invalidURL
         }
 
