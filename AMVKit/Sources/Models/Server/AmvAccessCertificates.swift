@@ -4,7 +4,7 @@ import HMKit
 
 struct AmvAccessCertificates: Codable {
 
-    internal(set) var all: [AMVAccessCertificate]
+    internal(set) var all: [AmvAccessCertificate]
 
 
     // MARK: CodingKey
@@ -16,7 +16,7 @@ struct AmvAccessCertificates: Codable {
 
     // MARK: Methods
 
-    static func deleteFromDatabase(accessCertificate: AMVAccessCertificate) {
+    static func deleteFromDatabase(accessCertificate: AmvAccessCertificate) {
         var accessCertificates = AmvAccessCertificates.load()
 
         if let idx = accessCertificates?.all.index(where: { $0.identifier == accessCertificate.identifier }) {
@@ -26,7 +26,7 @@ struct AmvAccessCertificates: Codable {
     }
 
     @available(*, unavailable, message: "Delete Access Certificate from server is not supported.")
-    static func deleteFromServer(accessCertificate: AMVAccessCertificate, deviceSerial: Hex, completion: @escaping (Result<AMVAccessCertificate>) -> Void) throws {
+    static func deleteFromServer(accessCertificate: AmvAccessCertificate, deviceSerial: Hex, completion: @escaping (Result<AmvAccessCertificate>) -> Void) throws {
     }
 
     static func download(deviceSerial: Hex, accessApiContext: AccessApiContext, completion: @escaping (Result<AmvAccessCertificates>) -> Void) throws {
@@ -54,7 +54,7 @@ struct AmvAccessCertificates: Codable {
 extension AmvAccessCertificates: Storable { }
 
 
-public struct AMVAccessCertificate {
+public struct AmvAccessCertificate {
 
     /// A name
     public let name: String
@@ -82,12 +82,12 @@ public struct AMVAccessCertificate {
     public let identifier: String
 
     let deviceValue: Base64
-    let deviceCertificate: AccessCertificate
+    let deviceCertificate: HMAccessCertificate
     let vehicleValue: Base64
-    let vehicleCertificate: AccessCertificate
+    let vehicleCertificate: HMAccessCertificate
 }
 
-extension AMVAccessCertificate: Codable {
+extension AmvAccessCertificate: Codable {
 
     enum Keys: String, CodingKey {
         case identifier = "id"
@@ -109,11 +109,11 @@ extension AMVAccessCertificate: Codable {
         vehicleValue = try container.decode(Base64.self, forKey: .vehicleValue)
 
         // Try to create Access Certificates from the data
-        guard let deviceCert = AccessCertificate(base64Encoded: deviceValue) else {
+        guard let deviceCert = HMAccessCertificate(base64Encoded: deviceValue) else {
             throw Failure.invalidData
         }
 
-        guard let vehicleCert = AccessCertificate(base64Encoded: vehicleValue) else {
+        guard let vehicleCert = HMAccessCertificate(base64Encoded: vehicleValue) else {
             throw Failure.invalidData
         }
 
@@ -135,9 +135,9 @@ extension AMVAccessCertificate: Codable {
     }
 }
 
-extension AMVAccessCertificate: Equatable {
+extension AmvAccessCertificate: Equatable {
 
-    public static func ==(lhs: AMVAccessCertificate, rhs: AMVAccessCertificate) -> Bool {
+    public static func ==(lhs: AmvAccessCertificate, rhs: AmvAccessCertificate) -> Bool {
         return (lhs.identifier == rhs.identifier) && (lhs.name == rhs.name) && (lhs.deviceValue == rhs.deviceValue) && (lhs.vehicleValue == rhs.vehicleValue)
     }
 }

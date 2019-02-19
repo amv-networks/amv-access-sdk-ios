@@ -21,9 +21,9 @@ struct BluetoothManager {
     }
 }
 
-extension BluetoothManager: LinkDelegate {
+extension BluetoothManager: HMLinkDelegate {
 
-    func link(_ link: Link, stateChanged previousState: LinkState) {
+    func link(_ link: HMLink, stateChanged previousState: HMLinkState) {
         switch link.state {
         case .authenticated:    dispatchConnectionSuccess(AMVConnectionStatus.authenticated)
         case .connected:        dispatchConnectionSuccess(AMVConnectionStatus.connected)
@@ -31,7 +31,7 @@ extension BluetoothManager: LinkDelegate {
         }
     }
 
-    func link(_ link: Link, commandReceived bytes: [UInt8]) {
+    func link(_ link: HMLink, commandReceived bytes: [UInt8]) {
         guard let command = AutoAPI.parseBinary(bytes) else {
             return
         }
@@ -53,7 +53,7 @@ extension BluetoothManager: LinkDelegate {
         }
     }
 
-    func link(_ link: Link, authorisationRequestedBy serialNumber: [UInt8], approve: @escaping Approve, timeout: TimeInterval) {
+    func link(_ link: HMLink, authorisationRequestedBy serialNumber: [UInt8], approve: @escaping Approve, timeout: TimeInterval) {
         // Just in case
         do {
             try approve()
@@ -63,23 +63,23 @@ extension BluetoothManager: LinkDelegate {
         }
     }
 
-    func link(_ link: Link, revokeCompleted bytes: [UInt8]) {
+    func link(_ link: HMLink, revokeCompleted bytes: [UInt8]) {
         // If you want to do something with the Revoke
     }
 }
 
-extension BluetoothManager: LocalDeviceDelegate {
+extension BluetoothManager: HMLocalDeviceDelegate {
 
-    func localDevice(stateChanged state: LocalDeviceState, oldState: LocalDeviceState) {
+    func localDevice(stateChanged state: HMLocalDeviceState, oldState: HMLocalDeviceState) {
         // Not interested atm
     }
 
-    func localDevice(didReceiveLink link: Link) {
+    func localDevice(didReceiveLink link: HMLink) {
         link.delegate = self
         dispatchConnectionSuccess(AMVConnectionStatus.connected)
     }
 
-    func localDevice(didLoseLink link: Link) {
+    func localDevice(didLoseLink link: HMLink) {
         link.delegate = nil
     }
 }

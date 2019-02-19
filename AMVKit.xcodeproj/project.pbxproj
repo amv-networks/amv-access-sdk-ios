@@ -55,6 +55,7 @@
 		31F5EB6E20109987001F3BEC /* HmCommandFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F5EB6D20109987001F3BEC /* HmCommandFactory.swift */; };
 		31F5EB7020109B06001F3BEC /* SimpleCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F5EB6F20109B06001F3BEC /* SimpleCommand.swift */; };
 		31F5EB7420176F95001F3BEC /* AccessApiContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F5EB7320176F95001F3BEC /* AccessApiContext.swift */; };
+		D8F12F29221579EE003BC5F5 /* HMUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8F12F28221579EE003BC5F5 /* HMUtilities.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -96,6 +97,7 @@
 		31F5EB6D20109987001F3BEC /* HmCommandFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HmCommandFactory.swift; sourceTree = "<group>"; };
 		31F5EB6F20109B06001F3BEC /* SimpleCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleCommand.swift; sourceTree = "<group>"; };
 		31F5EB7320176F95001F3BEC /* AccessApiContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessApiContext.swift; sourceTree = "<group>"; };
+		D8F12F28221579EE003BC5F5 /* HMUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = HMUtilities.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +106,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3109450421529A2800CB8E3F /* HMCryptoKit.framework in Frameworks */,
+				D8F12F29221579EE003BC5F5 /* HMUtilities.framework in Frameworks */,
 				313AC97B207380EF00062E74 /* AutoAPI.framework in Frameworks */,
 				313AC97C207380EF00062E74 /* HMKit.framework in Frameworks */,
 			);
@@ -233,6 +236,7 @@
 			isa = PBXGroup;
 			children = (
 				3109450321529A2800CB8E3F /* HMCryptoKit.framework */,
+				D8F12F28221579EE003BC5F5 /* HMUtilities.framework */,
 				20D3A3FE1F97742400305F06 /* AutoAPI.framework */,
 				204449BB1F7E41FC00F5C55E /* HMKit.framework */,
 			);
@@ -531,6 +535,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = AMVKit/Supporting/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -554,6 +562,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = AMVKit/Supporting/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;

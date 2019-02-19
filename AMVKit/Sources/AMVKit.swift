@@ -79,20 +79,20 @@ public struct AMVKit {
     ///   - accessCertificate: certificate (for a device / vehicle) to connect with
     ///   - handler: returns an async error or success (and subsequent updates)
     /// - Throws: if an error occured when starting (other errors are returned async in the handler)
-    public func connect(to accessCertificate: AMVAccessCertificate, handler: @escaping (Result<VehicleUpdate>) -> Void) throws {
+    public func connect(to accessCertificate: AmvAccessCertificate, handler: @escaping (Result<VehicleUpdate>) -> Void) throws {
         // Try to register the certificates-pair with HMKit
-        try LocalDevice.shared.registerCertificate(accessCertificate.deviceCertificate)
+        try HMLocalDevice.shared.registerCertificate(accessCertificate.deviceCertificate)
 
-        LocalDevice.shared.storeCertificate(accessCertificate.vehicleCertificate)
+        HMLocalDevice.shared.storeCertificate(accessCertificate.vehicleCertificate)
 
         // Just in case it was started before with a different one
-        if LocalDevice.shared.state == .broadcasting {
-            LocalDevice.shared.stopBroadcasting()
+        if HMLocalDevice.shared.state == .broadcasting {
+            HMLocalDevice.shared.stopBroadcasting()
         }
 
         // Set the filter and start
-        LocalDevice.shared.configuration.broadcastingFilter = accessCertificate.deviceCertificate.gainingSerial.data
-        try LocalDevice.shared.startBroadcasting()
+        HMLocalDevice.shared.configuration.broadcastingFilter = accessCertificate.deviceCertificate.gainingSerial.data
+        try HMLocalDevice.shared.startBroadcasting()
 
         AMVKit.shared.vehicleUpdateHandler = handler
     }
@@ -100,7 +100,7 @@ public struct AMVKit {
     /// Load Access Certificates from the local database.
     ///
     /// - Returns: the certificates, if any are present
-    public func getAccessCertificates() -> [AMVAccessCertificate]? {
+    public func getAccessCertificates() -> [AmvAccessCertificate]? {
         guard let _ = AmvDeviceCertificate.load() else {
             // Makes sure the kit was initialised before
             return nil
@@ -117,7 +117,7 @@ public struct AMVKit {
         return accessCertificates.all
     }
     
-    public func getAccessCertificateById(_ identifier: String) -> AMVAccessCertificate? {
+    public func getAccessCertificateById(_ identifier: String) -> AmvAccessCertificate? {
         let accessCertificatesFiltered = getAccessCertificates()?.filter({$0.identifier == identifier})
         return accessCertificatesFiltered?.first
     }
@@ -129,7 +129,7 @@ public struct AMVKit {
     ///
     /// - Parameter done: returns an async error or success
     /// - Throws: if an error occured initially
-    public func refreshAccessCertificates(_ done: @escaping (Result<[AMVAccessCertificate]>) -> Void) throws {
+    public func refreshAccessCertificates(_ done: @escaping (Result<[AmvAccessCertificate]>) -> Void) throws {
         guard let serial = AmvDeviceCertificate.load()?.serial else {
             throw Failure.uninitialised
         }
@@ -142,7 +142,7 @@ public struct AMVKit {
                     
                 case .success(var accessCertificates):
                     // Reset the HMKit Access Certificates database
-                    LocalDevice.shared.resetStorage()
+                    HMLocalDevice.shared.resetStorage()
                     
                     // Remove invalid certificates
                     accessCertificates.removeInvalidCertificates(deviceSerial: serial)
@@ -167,14 +167,14 @@ public struct AMVKit {
     ///   - done: returns an async error or success
     /// - Throws: if an error occured initially
     @available(*, unavailable, message: "Revoke Access Certificate is currently not supported.")
-    public func revokeAccessCertificate(_ accessCertificate: AMVAccessCertificate, done: @escaping (Result<AMVAccessCertificate>) -> Void) throws {
+    public func revokeAccessCertificate(_ accessCertificate: AmvAccessCertificate, done: @escaping (Result<AmvAccessCertificate>) -> Void) throws {
     }
     
     /// Sends a command to the connected and authenticated device.
     ///
     /// - Throws: an error before sending the command if the we're not authenticated
     public func sendCommand(_ commandType: CommandType) throws {
-        guard let activeLink = LocalDevice.shared.link, activeLink.state == .authenticated else {
+        guard let activeLink = HMLocalDevice.shared.link, activeLink.state == .authenticated else {
             throw Failure.disconnected
         }
         
@@ -187,11 +187,11 @@ public struct AMVKit {
     public func disconnect() {
         AMVKit.shared.vehicleUpdateHandler = nil
         
-        if LocalDevice.shared.state == .broadcasting {
-            LocalDevice.shared.stopBroadcasting()
+        if HMLocalDevice.shared.state == .broadcasting {
+            HMLocalDevice.shared.stopBroadcasting()
         }
         
-        LocalDevice.shared.disconnect()
+        HMLocalDevice.shared.disconnect()
     }
 
     /// Resets the local database.
@@ -200,7 +200,7 @@ public struct AMVKit {
     public func resetDatabase() {
         AmvAccessCertificates.load()?.delete()
         AmvDeviceCertificate.load()?.delete()
-        LocalDevice.shared.resetStorage()
+        HMLocalDevice.shared.resetStorage()
 
         KeychainLayer.shared.privateKey = nil
         KeychainLayer.shared.publicKey = nil
@@ -233,8 +233,9 @@ public struct AMVKit {
     // MARK: Init
 
     private init() {
-        LocalDevice.shared.delegate = BluetoothManager.shared
-        LocalDevice.loggingOptions = [.command, .error, .general, .bluetooth]
+        HMLocalDevice.shared.delegate = BluetoothManager.shared
+        HMLocalDevice.loggingOptions = [.command, .error, .general, .bluetooth]
+        HMLocalDevice.shared.configuration.isAlivePingActive = true
 
         if isFirstLaunch {
             // Keychain doesn't get reset after an uninstall-install

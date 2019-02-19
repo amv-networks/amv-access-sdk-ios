@@ -2,7 +2,7 @@ import Foundation
 import HMKit
 
 
-extension Link {
+extension HMLink {
 
     func sendCommand(_ command: [UInt8]) throws {
         try sendCommand(command, sent: {

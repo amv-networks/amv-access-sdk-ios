@@ -4,7 +4,7 @@ import HMKit
 public struct AmvDeviceCertificate {
 
     public var serial: Hex? {
-        guard let cert = DeviceCertificate(base64Encoded: value) else {
+        guard let cert = HMDeviceCertificate(base64Encoded: value) else {
             return nil
         }
 
@@ -61,7 +61,7 @@ public struct AmvDeviceCertificate {
     func initialiseLocalDevice() throws {
         let privateKey = KeysManager.shared.privateKey.base64String
 
-        try LocalDevice.shared.initialise(deviceCertificate: value, devicePrivateKey: privateKey, issuerPublicKey: issuerPublicKey)
+        try HMLocalDevice.shared.initialise(deviceCertificate: value, devicePrivateKey: privateKey, issuerPublicKey: issuerPublicKey)
     }
 }
 
