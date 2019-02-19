@@ -2,9 +2,9 @@ import Foundation
 import HMKit
 
 
-struct AmvAccessCertificates: Codable {
+struct AccessCertificates: Codable {
 
-    internal(set) var all: [AmvAccessCertificate]
+    internal(set) var all: [AccessCertificate]
 
 
     // MARK: CodingKey
@@ -16,8 +16,8 @@ struct AmvAccessCertificates: Codable {
 
     // MARK: Methods
 
-    static func deleteFromDatabase(accessCertificate: AmvAccessCertificate) {
-        var accessCertificates = AmvAccessCertificates.load()
+    static func deleteFromDatabase(accessCertificate: AccessCertificate) {
+        var accessCertificates = AccessCertificates.load()
 
         if let idx = accessCertificates?.all.index(where: { $0.identifier == accessCertificate.identifier }) {
             accessCertificates?.all.remove(at: idx)
@@ -26,10 +26,10 @@ struct AmvAccessCertificates: Codable {
     }
 
     @available(*, unavailable, message: "Delete Access Certificate from server is not supported.")
-    static func deleteFromServer(accessCertificate: AmvAccessCertificate, deviceSerial: Hex, completion: @escaping (Result<AmvAccessCertificate>) -> Void) throws {
+    static func deleteFromServer(accessCertificate: AccessCertificate, deviceSerial: Hex, completion: @escaping (Result<AccessCertificate>) -> Void) throws {
     }
 
-    static func download(deviceSerial: Hex, accessApiContext: AccessApiContext, completion: @escaping (Result<AmvAccessCertificates>) -> Void) throws {
+    static func download(deviceSerial: Hex, accessApiContext: AccessApiContext, completion: @escaping (Result<AccessCertificates>) -> Void) throws {
         guard let url = URL(baseUrl: accessApiContext.baseUrl, suffix: "/device/\(deviceSerial.lowercased())/access_certificates?certificate_version=1") else {
             throw Failure.invalidURL
         }
@@ -41,7 +41,7 @@ struct AmvAccessCertificates: Codable {
                 print(json)
             }
 
-            return try JSONDecoder().decode(AmvAccessCertificates.self, from: $0)
+            return try JSONDecoder().decode(AccessCertificates.self, from: $0)
         }.resume()
     }
 
@@ -51,10 +51,10 @@ struct AmvAccessCertificates: Codable {
     }
 }
 
-extension AmvAccessCertificates: Storable { }
+extension AccessCertificates: Storable { }
 
 
-public struct AmvAccessCertificate {
+public struct AccessCertificate {
 
     /// A name
     public let name: String
@@ -87,7 +87,7 @@ public struct AmvAccessCertificate {
     let vehicleCertificate: HMAccessCertificate
 }
 
-extension AmvAccessCertificate: Codable {
+extension AccessCertificate: Codable {
 
     enum Keys: String, CodingKey {
         case identifier = "id"
@@ -135,9 +135,9 @@ extension AmvAccessCertificate: Codable {
     }
 }
 
-extension AmvAccessCertificate: Equatable {
+extension AccessCertificate: Equatable {
 
-    public static func ==(lhs: AmvAccessCertificate, rhs: AmvAccessCertificate) -> Bool {
+    public static func ==(lhs: AccessCertificate, rhs: AccessCertificate) -> Bool {
         return (lhs.identifier == rhs.identifier) && (lhs.name == rhs.name) && (lhs.deviceValue == rhs.deviceValue) && (lhs.vehicleValue == rhs.vehicleValue)
     }
 }
