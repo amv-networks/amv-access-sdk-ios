@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'AMVKit'
-  s.version          = '0.5.2'
+  s.version          = '0.5.3'
   s.summary          = 'AMV Access SDK for iOS'
   s.description      = <<-DESC
 The pod has functionality for downloading, storing and using a Device Certificate.
