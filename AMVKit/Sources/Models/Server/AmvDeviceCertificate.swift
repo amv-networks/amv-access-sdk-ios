@@ -1,7 +1,7 @@
 import Foundation
 import HMKit
 
-public struct DeviceCertificate {
+public struct AmvDeviceCertificate {
 
     public var serial: Hex? {
         guard let cert = HMDeviceCertificate(base64Encoded: value) else {
@@ -27,7 +27,7 @@ public struct DeviceCertificate {
 
     // MARK: Methods
 
-    static func download(publicKey: Data, accessSdkOptions: AccessSdkOptions, completion: @escaping (Result<DeviceCertificate>) -> Void) throws {
+    static func download(publicKey: Data, accessSdkOptions: AccessSdkOptions, completion: @escaping (Result<AmvDeviceCertificate>) -> Void) throws {
         let accessApiContext = accessSdkOptions.accessApiContext
         
         guard let url = getDeviceCertificateURL(accessSdkOptions: accessSdkOptions) else {
@@ -54,7 +54,7 @@ public struct DeviceCertificate {
                 print(json)
             }
 
-            return try JSONDecoder().decode(DeviceCertificate.self, from: $0)
+            return try JSONDecoder().decode(AmvDeviceCertificate.self, from: $0)
         }.resume()
     }
 
@@ -65,7 +65,7 @@ public struct DeviceCertificate {
     }
 }
 
-extension DeviceCertificate: Codable {
+extension AmvDeviceCertificate: Codable {
 
     enum WrapperKeys: String, CodingKey {
         case deviceCertificate = "device_certificate"
@@ -99,4 +99,4 @@ extension DeviceCertificate: Codable {
     }
 }
 
-extension DeviceCertificate: Storable { }
+extension AmvDeviceCertificate: Storable { }

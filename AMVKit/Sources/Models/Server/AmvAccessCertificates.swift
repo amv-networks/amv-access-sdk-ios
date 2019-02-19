@@ -4,7 +4,7 @@ import HMKit
 
 struct AccessCertificates: Codable {
 
-    internal(set) var all: [AccessCertificate]
+    internal(set) var all: [AmvAccessCertificate]
 
 
     // MARK: CodingKey
@@ -16,7 +16,7 @@ struct AccessCertificates: Codable {
 
     // MARK: Methods
 
-    static func deleteFromDatabase(accessCertificate: AccessCertificate) {
+    static func deleteFromDatabase(accessCertificate: AmvAccessCertificate) {
         var accessCertificates = AccessCertificates.load()
 
         if let idx = accessCertificates?.all.index(where: { $0.identifier == accessCertificate.identifier }) {
@@ -26,7 +26,7 @@ struct AccessCertificates: Codable {
     }
 
     @available(*, unavailable, message: "Delete Access Certificate from server is not supported.")
-    static func deleteFromServer(accessCertificate: AccessCertificate, deviceSerial: Hex, completion: @escaping (Result<AccessCertificate>) -> Void) throws {
+    static func deleteFromServer(accessCertificate: AmvAccessCertificate, deviceSerial: Hex, completion: @escaping (Result<AmvAccessCertificate>) -> Void) throws {
     }
 
     static func download(deviceSerial: Hex, accessApiContext: AccessApiContext, completion: @escaping (Result<AccessCertificates>) -> Void) throws {
@@ -54,7 +54,7 @@ struct AccessCertificates: Codable {
 extension AccessCertificates: Storable { }
 
 
-public struct AccessCertificate {
+public struct AmvAccessCertificate {
 
     /// A name
     public let name: String
@@ -87,7 +87,7 @@ public struct AccessCertificate {
     let vehicleCertificate: HMAccessCertificate
 }
 
-extension AccessCertificate: Codable {
+extension AmvAccessCertificate: Codable {
 
     enum Keys: String, CodingKey {
         case identifier = "id"
@@ -135,9 +135,9 @@ extension AccessCertificate: Codable {
     }
 }
 
-extension AccessCertificate: Equatable {
+extension AmvAccessCertificate: Equatable {
 
-    public static func ==(lhs: AccessCertificate, rhs: AccessCertificate) -> Bool {
+    public static func ==(lhs: AmvAccessCertificate, rhs: AmvAccessCertificate) -> Bool {
         return (lhs.identifier == rhs.identifier) && (lhs.name == rhs.name) && (lhs.deviceValue == rhs.deviceValue) && (lhs.vehicleValue == rhs.vehicleValue)
     }
 }
