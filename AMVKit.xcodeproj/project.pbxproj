@@ -6,20 +6,6 @@
 	objectVersion = 48;
 	objects = {
 
-/* Begin PBXAggregateTarget section */
-		20D3A4011F9777BB00305F06 /* AMVKit Universal */ = {
-			isa = PBXAggregateTarget;
-			buildConfigurationList = 20D3A4021F9777BB00305F06 /* Build configuration list for PBXAggregateTarget "AMVKit Universal" */;
-			buildPhases = (
-				20D3A4051F9777C000305F06 /* ShellScript */,
-			);
-			dependencies = (
-			);
-			name = "AMVKit Universal";
-			productName = "AMVKit Universal";
-		};
-/* End PBXAggregateTarget section */
-
 /* Begin PBXBuildFile section */
 		2002AC661FA35C950011E5EE /* AMVKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2002AC651FA35C950011E5EE /* AMVKeys.swift */; };
 		201970541F8E04E900B7D64F /* Link+SendCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201970531F8E04E900B7D64F /* Link+SendCommand.swift */; };
@@ -311,10 +297,6 @@
 						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 					};
-					20D3A4011F9777BB00305F06 = {
-						CreatedOnToolsVersion = 9.0;
-						ProvisioningStyle = Automatic;
-					};
 				};
 			};
 			buildConfigurationList = 203BC24A1F7E4046002CCE9C /* Build configuration list for PBXProject "AMVKit" */;
@@ -330,7 +312,6 @@
 			projectRoot = "";
 			targets = (
 				203BC24F1F7E4046002CCE9C /* AMVKit */,
-				20D3A4011F9777BB00305F06 /* AMVKit Universal */,
 			);
 		};
 /* End PBXProject section */
@@ -344,22 +325,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		20D3A4051F9777C000305F06 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "/bin/sh \"${SRCROOT}/AMVKit/Supporting/UniversalBuildScript.sh\"";
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		203BC24B1F7E4046002CCE9C /* Sources */ = {
@@ -577,24 +542,6 @@
 			};
 			name = Release;
 		};
-		20D3A4031F9777BB00305F06 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = F42CFRE556;
-				PRODUCT_NAME = AMVKit;
-			};
-			name = Debug;
-		};
-		20D3A4041F9777BB00305F06 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = F42CFRE556;
-				PRODUCT_NAME = AMVKit;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -612,15 +559,6 @@
 			buildConfigurations = (
 				203BC2591F7E4046002CCE9C /* Debug */,
 				203BC25A1F7E4046002CCE9C /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		20D3A4021F9777BB00305F06 /* Build configuration list for PBXAggregateTarget "AMVKit Universal" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				20D3A4031F9777BB00305F06 /* Debug */,
-				20D3A4041F9777BB00305F06 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
